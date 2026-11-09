@@ -141,18 +141,5 @@
     "flags": [
       "synthetic_demo"
     ]
-  },
-  {
-    "ticker": "AAPL",
-    "source": "yahoo",
-    "timestamp": "2026-11-08T15:00:00+00:00",
-    "url": "https://example.com/demo/aapl-earlier-1",
-    "text": "Synthetic headline: Apple faces a lawsuit over a fictional contract.",
-    "label": "bearish",
-    "score": -0.6,
-    "signals": [],
-    "flags": [
-      "synthetic_demo"
-    ]
   }
 ]
