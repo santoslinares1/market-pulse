@@ -1,0 +1,15 @@
+# Explicit offline example. These ids are not live Polymarket markets.
+# Omit --polymarket entirely to leave the radar unchanged.
+# Replace market_id and outcome with values copied from `marketpulse polymarket-search`.
+links:
+  - ticker: JPM
+    market_id: "example-market-not-live"
+    slug: example-rate-cut-not-live
+    outcome: "Yes"
+    # higher_price_with_bearish is this file's comparison choice for the demo.
+    # It does not mean a rate-cut contract is bearish for JPM in real life.
+    relation: higher_price_with_bearish
+    interpretation: >
+      Offline example only. Yes means the fictional committee cuts the example
+      rate. The relation is a user choice so the demo can show a comparison;
+      it is not a claim about banks, policy, or expected returns.

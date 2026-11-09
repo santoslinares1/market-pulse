@@ -1,0 +1,46 @@
+{
+  "example": true,
+  "label": "example-not-live",
+  "note": "Synthetic Gamma-shaped payload for offline demos and tests. Not a live Polymarket capture and not evidence about any real event.",
+  "markets": [
+    {
+      "id": "example-market-not-live",
+      "slug": "example-rate-cut-not-live",
+      "question": "Will the example committee cut the example rate in December?",
+      "description": "This fictional market resolves Yes if the example committee announces an example rate cut. It is not a Polymarket rule and not a real resolution source.",
+      "resolutionSource": "Example resolution note, not a live oracle.",
+      "conditionId": "0xexample",
+      "version": "v1",
+      "outcomes": "[\"Yes\", \"No\"]",
+      "outcomePrices": "[\"0.55\", \"0.45\"]",
+      "clobTokenIds": "[\"example-token-yes\", \"example-token-no\"]",
+      "positionIds": ["example-position-yes", "example-position-no"],
+      "active": true,
+      "closed": false,
+      "archived": false,
+      "acceptingOrders": true,
+      "liquidity": "5000",
+      "volume24hr": 1200,
+      "volume": "90000",
+      "updatedAt": "2026-11-09T17:30:00Z",
+      "endDate": "2026-12-31T00:00:00Z",
+      "resolutionStatus": null,
+      "umaResolutionStatuses": [],
+      "events": [
+        {
+          "id": "example-event-not-live",
+          "slug": "example-rate-cut-not-live",
+          "title": "Example committee rate decision"
+        }
+      ]
+    }
+  ],
+  "histories": {
+    "example-token-yes": {
+      "data": [
+        {"timestamp": 1794211200, "price": 0.4, "resolution_seconds": 3600}
+      ],
+      "pagination": {"has_more": false, "next_cursor": null}
+    }
+  }
+}

@@ -178,6 +178,7 @@ ISO-8601 timestamps with explicit offsets (normally UTC). No timestamp is fabric
 - `aggregate.py`: source-level statistics, comparable windows and alert rules.
 - `storage.py`, `watchlist.py`: atomic persistence and cwd-safe configuration.
 - `cli.py`, `report.py`: orchestration, structured files and Markdown memo.
+- `polymarket.py`: opt-in, read-only Polymarket context. Absent unless you pass a links file.
 - `tests/`: offline fixtures/mocks for classification, negative cases, HTTP errors,
   aggregation, thresholds, coverage mismatches, stale prices, snapshots, rendering and CLI.
 
@@ -277,6 +278,132 @@ and not predictive performance.
 
 There is no default `marketpulse` subcommand that executes arbitrary SQL against your
 project (avoids injection and surprise bytes billed). Run the `.sql` files yourself.
+
+Polymarket observations, when you opt in, use a **separate** table. The mentions
+schema above is unchanged.
+
+```bash
+.venv/bin/marketpulse bq-ddl --bq-dataset YOUR_PROJECT.YOUR_DATASET --bq-series polymarket
+# checked-in copy: sql/polymarket_observations_ddl.sql
+# window query: sql/polymarket_window_changes.sql
+.venv/bin/marketpulse bq-init --bq-dataset YOUR_PROJECT.YOUR_DATASET --bq-series polymarket
+.venv/bin/marketpulse bq-export-polymarket \
+  --observations data/polymarket/observations.json \
+  --bq-dataset YOUR_PROJECT.YOUR_DATASET
+```
+
+`bq-ddl` and `bq-init` still default to `--bq-series mentions`. A normal radar run
+exports Polymarket rows only when both `--bq-dataset` and a Polymarket links file
+were used. That export is still opt-in and is not executed by the test suite.
+
+## Optional Polymarket context
+
+Default installs and default CLI runs **never** call Polymarket. There is no
+wallet, order, position, balance, or key support. The adapter reads public
+market data only, and only after you point it at markets you chose.
+
+A selected outcome price is a share price in `[0, 1]`. It is a market price
+proxy, not a calibrated probability. MarketPulse does not treat a Fed, election,
+or other contract as bullish or bearish for a ticker unless your links file says
+how you want that price compared. A divergence line is a heuristic prompt to
+inspect both series. It is not causality, an edge, a profit claim, or a forecast.
+
+Official references used by the client:
+
+- Discovery and market metadata: [Gamma API](https://gamma-api.polymarket.com) and [Discover markets](https://docs.polymarket.com/market-data/discover-markets)
+- Outcome, status, liquidity, and rules fields: [Market details](https://docs.polymarket.com/market-data/market-details)
+- Public price history: [`https://data-api.polymarket.com/v2/prices-history`](https://data-api.polymarket.com/v2/prices-history) and [Prices and order books](https://docs.polymarket.com/market-data/prices-order-books)
+
+### Discover a bounded list
+
+Search does not modify the watchlist and does not guess a ticker.
+
+```bash
+.venv/bin/marketpulse polymarket-search --query "Fed" --limit 5
+.venv/bin/marketpulse polymarket-search --market-id GAMMA_MARKET_ID
+.venv/bin/marketpulse polymarket-search --slug market-or-event-slug
+```
+
+`--limit` is capped at 5 events. Each event shows at most 8 markets. One
+`public-search` page is requested; if the provider sets `hasMore`, that fact is
+printed and the extra page is not fetched, because that response does not
+document a cursor. A 429 is reported and not retried.
+
+Copy a real `market_id` and the exact outcome label into a YAML file. Do not
+leave the example id in place if you want live data.
+
+### Configure an explicit link
+
+```yaml
+links:
+  - ticker: JPM
+    market_id: "PASTE_GAMMA_ID"
+    outcome: "Yes"
+    relation: unspecified
+    interpretation: >
+      Yes means the contract's own question, which you should restate here.
+      unspecified compares nothing directionally; it only shows the price
+      beside JPM conversation.
+```
+
+`relation` is your comparison choice:
+
+- `unspecified` — show the price. Never flag divergence.
+- `higher_price_with_bullish` — a higher selected-outcome price is the side you asked to line up with bullish conversation.
+- `higher_price_with_bearish` — a higher selected-outcome price is the side you asked to line up with bearish conversation.
+
+The interpretation must be at least a short sentence. There is no packaged list of live markets.
+
+### Run
+
+```bash
+.venv/bin/marketpulse --tickers JPM --polymarket polymarket.links.yml -o output
+```
+
+Environment alternatives: `MARKETPULSE_POLYMARKET` and `MARKETPULSE_POLYMARKET_FIXTURE`.
+History snapshots go to `data/polymarket/observations.json` (atomic rewrite, idempotent
+on `observation_id`). The same provider timestamp and price is not stored twice.
+If no earlier observation exists inside the lookback, the window change stays empty.
+MarketPulse does not invent a past price.
+
+Public history, when a v1 `clobTokenIds` or v2 `positionIds` entry lines up with the
+chosen outcome, is one or two GETs:
+
+`https://data-api.polymarket.com/v2/prices-history?token_id=...&start=...&end=...&bucket_seconds=3600`
+
+Those points are labeled `data_api_v2_prices_history`. `resolution_seconds: 0` is an
+exact tick. Other widths are buckets, not a full trade tape. `--polymarket-skip-history`
+skips that call. A history failure is a warning; Yahoo, Reddit, and X still finish.
+
+The brief gains a Polymarket section only when the links file is set. `polymarket.json`
+and `polymarket.csv` are the machine-readable copies. Divergence additionally
+requires a directional recent tone with at least 3 mentions, a fresh Gamma
+`updatedAt` (within 6 hours), `closed: false`, reported liquidity of at least
+1000, and an aligned price move of at least 0.03 outside a dead zone. Missing
+liquidity stays null. Volume in the table is Gamma `volume24hr` (trailing 24
+hours, provider units, not converted).
+
+### Offline demo
+
+`examples/polymarket/` is synthetic. See `examples/polymarket/README.md`.
+
+```bash
+.venv/bin/marketpulse --tickers JPM \
+  --polymarket examples/polymarket/links.example.yml \
+  --polymarket-fixture examples/polymarket/fixture.json \
+  --as-of 2026-11-09T18:00:00Z \
+  -o output
+```
+
+`--as-of` is refused unless a fixture is present.
+
+### What you still set up yourself
+
+Live use needs network access to Gamma and the Data API. BigQuery export of the
+new series needs the same GCP project, API, billing choice, dataset, and
+Application Default Credentials described above, plus
+`bq-init --bq-series polymarket` (or `all`). This repository does not log into
+GCP or create those resources.
 
 ## Limitations and next steps
 
