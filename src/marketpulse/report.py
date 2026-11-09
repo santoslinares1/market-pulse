@@ -71,6 +71,8 @@ def render(run, items):
             lines.append(f"  - {escape(message)}")
     for warning in run.get("warnings", []):
         lines.append(f"- Run warning: {escape(warning)}")
+    if run.get("polymarket"):
+        lines += polymarket_section(run["polymarket"])
     lines += ["", "## Method and guardrails", "",
               "- English finance lexicon; phrase matching, three-token negation scope, neutral dead zone, ticker-line context and promotional-noise suppression.",
               "- Shift: >=3 comparable mentions in each window, mean-score delta >=0.35 or bullish/bearish direction flip (direction boundary ±0.15). "
@@ -82,4 +84,81 @@ def render(run, items):
               "- First run compares recent vs earlier lookback. Later runs can fall back to a non-overlapping snapshot from the preceding seven days "
               "with matching settings and available sources. Sparse evidence stays insufficient.",
               "- No trading orders, notifications, model accuracy claims or backtested predictive performance. Not investment advice.", ""]
+    if run.get("polymarket"):
+        lines += [
+            "- Polymarket outcome prices are share-price proxies in [0, 1], not calibrated probabilities. "
+            "A context-divergence flag fires only for an explicit user mapping with aligned observations, "
+            "adequate recent mentions, fresh quotes, and reported liquidity. It is not causality, an edge, or a forecast.",
+            "",
+        ]
     return "\n".join(lines)
+
+
+def polymarket_section(payload):
+    lines = ["", "## Polymarket context (opt-in)", "",
+             escape(payload.get("price_meaning") or ""),
+             escape(payload.get("divergence_meaning") or ""),
+             ""]
+    if payload.get("offline_fixture"):
+        lines.append("This section was rendered from an **offline fixture**, not a live Polymarket capture.")
+        lines.append("")
+    lines += ["| Ticker | Question | Outcome | Price | Window change | 24h volume | Liquidity | Limitations |",
+              "|---|---|---|---:|---:|---:|---:|---|"]
+    for link in payload.get("links") or []:
+        window = link.get("window") or {}
+        price = "n/a" if link.get("price") is None else f"{link['price']:.3f}"
+        delta = "n/a" if window.get("delta") is None else f"{window['delta']:+.3f}"
+        volume = "n/a" if link.get("volume_24h") is None else f"{link['volume_24h']:.0f}"
+        liquidity = "n/a" if link.get("liquidity") is None else f"{link['liquidity']:.0f}"
+        limits = ", ".join(link.get("limitations") or []) or "none"
+        lines.append(
+            f"| {escape(link.get('ticker'))} | {escape(link.get('question') or 'n/a')} | "
+            f"{escape(link.get('outcome') or 'n/a')} | {price} | {delta} | {volume} | {liquidity} | {escape(limits)} |"
+        )
+    lines.append("")
+    for link in payload.get("links") or []:
+        lines.append(f"### {escape(link.get('ticker'))} — {escape(link.get('question') or 'market unavailable')}")
+        lines.append(f"- Outcome `{escape(link.get('outcome') or 'n/a')}` · price basis: {escape(link.get('price_basis') or 'n/a')}")
+        lines.append(f"- User interpretation: {escape(link.get('interpretation') or 'n/a')}")
+        lines.append(f"- Mapping relation: `{escape(link.get('relation') or 'n/a')}` (this is the user's comparison choice, not an inferred equity beta)")
+        if link.get("source_url"):
+            lines.append(f"- Source URL: {link['source_url']}")
+        if link.get("api_url"):
+            lines.append(f"- API URL: {link['api_url']}")
+        lines.append(
+            f"- Status: closed={link.get('closed')}, resolution={escape(link.get('resolution_status') or 'n/a')}, "
+            f"rules source: {escape(link.get('resolution_source') or 'n/a')}"
+        )
+        rules = link.get("rules_text") or ""
+        if rules:
+            excerpt = rules if len(rules) <= 400 else rules[:400] + "…"
+            lines.append(f"- Rules excerpt: {escape(excerpt)}")
+        window = link.get("window") or {}
+        if window:
+            lines.append(
+                f"- Earlier price: {window.get('earlier_price')} at {escape(window.get('earlier_observed_at') or 'n/a')} "
+                f"({escape(window.get('earlier_provenance') or 'none')}). {escape(window.get('note') or '')}"
+            )
+        history = link.get("history") or {}
+        if history:
+            lines.append(
+                f"- History read: {escape(history.get('provenance') or 'n/a')}; "
+                f"points kept {history.get('points_kept')}; sampling: {escape(history.get('sampling') or 'n/a')}"
+            )
+        flag = link.get("divergence_flag")
+        if flag:
+            lines.append(f"- **Divergence (heuristic):** {escape(flag.get('message'))}")
+        else:
+            reasons = ", ".join(link.get("suppressed_reasons") or []) or "not evaluated"
+            lines.append(f"- Divergence suppressed: {escape(reasons)}")
+        for message in (link.get("errors") or []) + (link.get("warnings") or []):
+            lines.append(f"  - {escape(message)}")
+        lines.append("")
+    for warning in payload.get("warnings") or []:
+        lines.append(f"- Run warning: {escape(warning)}")
+    lines.append(
+        "Volume is Gamma `volume24hr` (trailing 24h, provider units). Liquidity is Gamma `liquidity` "
+        f"(missing stays null; divergence wants at least {1000:g} reported units). "
+        "Neither figure is converted to a currency."
+    )
+    return lines

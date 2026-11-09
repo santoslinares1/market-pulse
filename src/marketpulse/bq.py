@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import re
 from dataclasses import asdict
 from datetime import datetime, timezone
@@ -405,3 +406,227 @@ def export_mentions(
         source_statuses=source_statuses,
     )
     return store.merge_rows(rows, run_id=run_id)
+
+
+TABLE_POLYMARKET = "polymarket_observations"
+
+POLYMARKET_SCHEMA_FIELDS = (
+    ("observation_id", "STRING", "REQUIRED"),
+    ("series_id", "STRING", "REQUIRED"),
+    ("ticker", "STRING", "REQUIRED"),
+    ("market_id", "STRING", "REQUIRED"),
+    ("slug", "STRING", "NULLABLE"),
+    ("outcome", "STRING", "REQUIRED"),
+    ("question", "STRING", "NULLABLE"),
+    ("price", "FLOAT64", "REQUIRED"),
+    ("price_basis", "STRING", "REQUIRED"),
+    ("observed_at", "TIMESTAMP", "REQUIRED"),
+    ("observed_at_basis", "STRING", "REQUIRED"),
+    ("ingested_at", "TIMESTAMP", "REQUIRED"),
+    ("provenance", "STRING", "REQUIRED"),
+    ("sampling", "STRING", "NULLABLE"),
+    ("volume_24h", "FLOAT64", "NULLABLE"),
+    ("liquidity", "FLOAT64", "NULLABLE"),
+    ("closed", "BOOL", "NULLABLE"),
+    ("resolution_status", "STRING", "NULLABLE"),
+    ("run_id", "STRING", "REQUIRED"),
+    ("source_url", "STRING", "NULLABLE"),
+)
+
+
+def polymarket_ddl(project: str, dataset: str, table: str = TABLE_POLYMARKET) -> str:
+    """DDL for outcome-price observations. Does not create resources or touch mentions."""
+    parts = []
+    for name, typ, mode in POLYMARKET_SCHEMA_FIELDS:
+        suffix = " NOT NULL" if mode == "REQUIRED" else ""
+        parts.append(f"{name} {typ}{suffix}")
+    cols = ",\n  ".join(parts)
+    target = fq_table(project, dataset, table)
+    return (
+        f"CREATE TABLE IF NOT EXISTS {target} (\n  {cols}\n)\n"
+        f"PARTITION BY DATE(observed_at)\n"
+        f"CLUSTER BY ticker, market_id;\n"
+    )
+
+
+def polymarket_merge_sql(project: str, dataset: str, table: str, staging: str) -> str:
+    target = fq_table(project, dataset, table)
+    stage = fq_table(project, dataset, staging)
+    return f"""
+MERGE {target} T
+USING {stage} S
+ON T.observation_id = S.observation_id
+WHEN MATCHED THEN UPDATE SET
+  liquidity = S.liquidity,
+  volume_24h = S.volume_24h,
+  closed = S.closed,
+  resolution_status = S.resolution_status,
+  ingested_at = S.ingested_at,
+  provenance = S.provenance,
+  sampling = S.sampling,
+  run_id = S.run_id
+WHEN NOT MATCHED THEN INSERT (
+  observation_id, series_id, ticker, market_id, slug, outcome, question, price,
+  price_basis, observed_at, observed_at_basis, ingested_at, provenance, sampling,
+  volume_24h, liquidity, closed, resolution_status, run_id, source_url
+) VALUES (
+  S.observation_id, S.series_id, S.ticker, S.market_id, S.slug, S.outcome, S.question, S.price,
+  S.price_basis, S.observed_at, S.observed_at_basis, S.ingested_at, S.provenance, S.sampling,
+  S.volume_24h, S.liquidity, S.closed, S.resolution_status, S.run_id, S.source_url
+)
+""".strip()
+
+
+def row_from_observation(row: Mapping[str, Any], *, run_id: str | None = None) -> dict[str, Any]:
+    if not isinstance(row, Mapping) or not row.get("observation_id") or not row.get("series_id"):
+        raise ValueError("Polymarket observation is missing observation_id or series_id")
+    price = float(row["price"])
+    if isinstance(row["price"], bool) or not math.isfinite(price):
+        raise ValueError("Polymarket observation price must be finite")
+    return {
+        "observation_id": str(row["observation_id"]),
+        "series_id": str(row["series_id"]),
+        "ticker": str(row["ticker"]).upper(),
+        "market_id": str(row["market_id"]),
+        "slug": row.get("slug"),
+        "outcome": str(row["outcome"]),
+        "question": row.get("question"),
+        "price": price,
+        "price_basis": str(row["price_basis"]),
+        "observed_at": _iso_utc(row["observed_at"]),
+        "observed_at_basis": str(row.get("observed_at_basis") or "unspecified"),
+        "ingested_at": _iso_utc(row.get("ingested_at") or datetime.now(timezone.utc)),
+        "provenance": str(row.get("provenance") or "unspecified"),
+        "sampling": row.get("sampling"),
+        "volume_24h": None if row.get("volume_24h") is None else float(row["volume_24h"]),
+        "liquidity": None if row.get("liquidity") is None else float(row["liquidity"]),
+        "closed": row.get("closed") if isinstance(row.get("closed"), bool) else None,
+        "resolution_status": row.get("resolution_status"),
+        "run_id": str(run_id or row.get("run_id") or ""),
+        "source_url": row.get("source_url"),
+    }
+
+
+def _polymarket_schema_fields(bigquery):
+    mode_map = {"REQUIRED": "REQUIRED", "NULLABLE": "NULLABLE"}
+    return [
+        bigquery.SchemaField(name, typ, mode=mode_map[mode])
+        for name, typ, mode in POLYMARKET_SCHEMA_FIELDS
+    ]
+
+
+class BigQueryObservationStore:
+    """Staging MERGE for polymarket_observations. Separate from the mentions table."""
+
+    def __init__(self, project: str, dataset: str, *, table: str = TABLE_POLYMARKET,
+                 location: str = "US", client: Any | None = None):
+        self.project = require_project(project)
+        self.dataset = require_identifier(dataset, kind="dataset")
+        self.table = require_identifier(table, kind="table")
+        self.location = str(location or "US")
+        self.client = client
+        self._bigquery = None
+        self._gax = None
+        if client is None:
+            bigquery, gax = _import_bigquery()
+            self._bigquery = bigquery
+            self._gax = gax
+            try:
+                self.client = bigquery.Client(project=self.project, location=self.location)
+            except Exception as exc:  # noqa: BLE001
+                raise _classify_rpc_error(exc, gax) from exc
+
+    @property
+    def table_id(self) -> str:
+        return f"{self.project}.{self.dataset}.{self.table}"
+
+    def ddl(self) -> str:
+        return polymarket_ddl(self.project, self.dataset, self.table)
+
+    def ensure_dataset_and_table(self, *, create_dataset: bool = True) -> None:
+        bigquery = self._bigquery
+        gax = self._gax
+        if bigquery is None:
+            bigquery, gax = _import_bigquery()
+            self._bigquery, self._gax = bigquery, gax
+        try:
+            dataset_ref = bigquery.Dataset(f"{self.project}.{self.dataset}")
+            dataset_ref.location = self.location
+            if create_dataset:
+                self.client.create_dataset(dataset_ref, exists_ok=True)
+            table = bigquery.Table(self.table_id, schema=_polymarket_schema_fields(bigquery))
+            table.time_partitioning = bigquery.TimePartitioning(
+                type_=bigquery.TimePartitioningType.DAY,
+                field="observed_at",
+            )
+            table.clustering_fields = ["ticker", "market_id"]
+            self.client.create_table(table, exists_ok=True)
+        except Exception as exc:  # noqa: BLE001
+            raise _classify_rpc_error(exc, gax) from exc
+
+    def merge_rows(self, rows: Sequence[Mapping[str, Any]], *, run_id: str) -> dict[str, int]:
+        if not rows:
+            return {"attempted": 0, "merged_batches": 0}
+        bigquery = self._bigquery
+        gax = self._gax
+        if bigquery is None:
+            bigquery, gax = _import_bigquery()
+            self._bigquery, self._gax = bigquery, gax
+        staging_name = require_identifier(
+            f"_mp_poly_{re.sub(r'[^A-Za-z0-9_]', '_', run_id)[:80]}",
+            kind="table",
+        )
+        staging_id = f"{self.project}.{self.dataset}.{staging_name}"
+        attempted = 0
+        batches = 0
+        schema = _polymarket_schema_fields(bigquery)
+        try:
+            staging = bigquery.Table(staging_id, schema=schema)
+            self.client.create_table(staging, exists_ok=True)
+            for start in range(0, len(rows), BATCH_SIZE):
+                chunk = [dict(r) for r in rows[start : start + BATCH_SIZE]]
+                job_config = bigquery.LoadJobConfig(
+                    schema=schema,
+                    write_disposition=bigquery.WriteDisposition.WRITE_APPEND,
+                    source_format=bigquery.SourceFormat.NEWLINE_DELIMITED_JSON,
+                )
+                load_job = self.client.load_table_from_json(chunk, staging_id, job_config=job_config)
+                result = load_job.result()
+                output_rows = getattr(result, "output_rows", None)
+                if output_rows is not None and output_rows != len(chunk):
+                    raise BigQueryExportError(
+                        f"Staging load wrote {output_rows} rows but {len(chunk)} were sent; "
+                        "refusing to MERGE with incomplete batch."
+                    )
+                attempted += len(chunk)
+                batches += 1
+            merge = polymarket_merge_sql(self.project, self.dataset, self.table, staging_name)
+            query_job = self.client.query(merge, location=self.location)
+            query_job.result()
+            if getattr(query_job, "errors", None):
+                raise BigQueryExportError(f"MERGE reported errors: {query_job.errors}")
+        except BigQueryExportError:
+            raise
+        except Exception as exc:  # noqa: BLE001
+            raise _classify_rpc_error(exc, gax) from exc
+        finally:
+            try:
+                self.client.delete_table(staging_id, not_found_ok=True)
+            except Exception:  # noqa: BLE001
+                pass
+        return {"attempted": attempted, "merged_batches": batches}
+
+
+def export_polymarket_observations(
+    rows: Sequence[Mapping[str, Any]],
+    *,
+    dataset_ref: str,
+    run_id: str,
+    location: str = "US",
+    table: str = TABLE_POLYMARKET,
+    client: Any | None = None,
+) -> dict[str, int]:
+    project, dataset = parse_dataset_ref(dataset_ref)
+    prepared = [row_from_observation(row, run_id=run_id) for row in rows]
+    store = BigQueryObservationStore(project, dataset, table=table, location=location, client=client)
+    return store.merge_rows(prepared, run_id=run_id)
