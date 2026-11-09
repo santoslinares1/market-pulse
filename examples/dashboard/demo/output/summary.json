@@ -1,0 +1,403 @@
+{
+  "schema_version": 1,
+  "classifier_version": "lexicon-1",
+  "generated_at": "2026-11-09T18:00:00+00:00",
+  "run_id": "synthetic-demo-20261109T180000Z",
+  "hours": 24,
+  "recent_hours": 6,
+  "warnings": [
+    "Synthetic demo run. Not a live MarketPulse capture."
+  ],
+  "source_status": [
+    {
+      "ticker": "AAPL",
+      "source": "yahoo",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Synthetic demo status. No Yahoo request was made."
+      ],
+      "sampled": true,
+      "fetched": 2,
+      "accepted": 2
+    },
+    {
+      "ticker": "AAPL",
+      "source": "reddit",
+      "status": "error",
+      "errors": [
+        "HTTPError: 403"
+      ],
+      "warnings": [
+        "Synthetic error row so the dashboard can show a partial source. Not a live request."
+      ],
+      "sampled": true,
+      "fetched": 0,
+      "accepted": 0
+    },
+    {
+      "ticker": "AAPL",
+      "source": "x",
+      "status": "skipped",
+      "errors": [],
+      "warnings": [
+        "Synthetic skip. No X token is used by the demo."
+      ],
+      "sampled": true,
+      "fetched": 0,
+      "accepted": 0
+    },
+    {
+      "ticker": "JPM",
+      "source": "yahoo",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Synthetic demo status. No Yahoo request was made."
+      ],
+      "sampled": true,
+      "fetched": 2,
+      "accepted": 2
+    },
+    {
+      "ticker": "JPM",
+      "source": "reddit",
+      "status": "error",
+      "errors": [
+        "HTTPError: 403"
+      ],
+      "warnings": [
+        "Synthetic error row so the dashboard can show a partial source. Not a live request."
+      ],
+      "sampled": true,
+      "fetched": 0,
+      "accepted": 0
+    },
+    {
+      "ticker": "JPM",
+      "source": "x",
+      "status": "skipped",
+      "errors": [],
+      "warnings": [
+        "Synthetic skip. No X token is used by the demo."
+      ],
+      "sampled": true,
+      "fetched": 0,
+      "accepted": 0
+    },
+    {
+      "ticker": "NVDA",
+      "source": "yahoo",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Synthetic demo status. No Yahoo request was made."
+      ],
+      "sampled": true,
+      "fetched": 2,
+      "accepted": 2
+    },
+    {
+      "ticker": "NVDA",
+      "source": "reddit",
+      "status": "error",
+      "errors": [
+        "HTTPError: 403"
+      ],
+      "warnings": [
+        "Synthetic error row so the dashboard can show a partial source. Not a live request."
+      ],
+      "sampled": true,
+      "fetched": 0,
+      "accepted": 0
+    },
+    {
+      "ticker": "NVDA",
+      "source": "x",
+      "status": "skipped",
+      "errors": [],
+      "warnings": [
+        "Synthetic skip. No X token is used by the demo."
+      ],
+      "sampled": true,
+      "fetched": 0,
+      "accepted": 0
+    }
+  ],
+  "tickers": {
+    "AAPL": {
+      "ticker": "AAPL",
+      "overall": {
+        "volume": 6,
+        "by_source": {
+          "reddit": 1,
+          "x": 1,
+          "yahoo": 4
+        },
+        "bullish": 3,
+        "bearish": 3,
+        "neutral": 0,
+        "score_sum": 0.41,
+        "net_score": 0.0683,
+        "sources": {
+          "yahoo": {
+            "volume": 4,
+            "score_sum": 0.27
+          },
+          "reddit": {
+            "volume": 1,
+            "score_sum": -0.5
+          },
+          "x": {
+            "volume": 1,
+            "score_sum": 0.64
+          }
+        }
+      },
+      "tone": "neutral",
+      "recent": {
+        "volume": 3,
+        "by_source": {
+          "x": 1,
+          "yahoo": 2
+        },
+        "bullish": 3,
+        "bearish": 0,
+        "neutral": 0,
+        "score_sum": 2.06,
+        "net_score": 0.6867,
+        "sources": {
+          "yahoo": {
+            "volume": 2,
+            "score_sum": 1.42
+          },
+          "x": {
+            "volume": 1,
+            "score_sum": 0.64
+          }
+        }
+      },
+      "earlier": {
+        "volume": 3,
+        "by_source": {
+          "reddit": 1,
+          "yahoo": 2
+        },
+        "bullish": 0,
+        "bearish": 3,
+        "neutral": 0,
+        "score_sum": -1.65,
+        "net_score": -0.55,
+        "sources": {
+          "yahoo": {
+            "volume": 2,
+            "score_sum": -1.15
+          },
+          "reddit": {
+            "volume": 1,
+            "score_sum": -0.5
+          }
+        }
+      },
+      "successful_sources": [
+        "yahoo"
+      ],
+      "comparison": {
+        "baseline": "earlier lookback",
+        "sources": [
+          "yahoo"
+        ],
+        "recent_count": 2,
+        "baseline_count": 2,
+        "recent_score": 0.71,
+        "baseline_score": -0.575,
+        "delta": null,
+        "direction_flip": false,
+        "volume_ratio": null,
+        "adequate": false,
+        "note": "Insufficient comparable baseline (need >=3 mentions in each window); no shift/volume inference"
+      },
+      "price": {
+        "percent_change": null,
+        "usable_for_divergence": false,
+        "note": "Synthetic demo has no Yahoo bars. Price context is absent, not zero.",
+        "ticker": "AAPL"
+      },
+      "alerts": []
+    },
+    "JPM": {
+      "ticker": "JPM",
+      "overall": {
+        "volume": 3,
+        "by_source": {
+          "reddit": 1,
+          "yahoo": 2
+        },
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 2,
+        "score_sum": 0.45,
+        "net_score": 0.15,
+        "sources": {
+          "yahoo": {
+            "volume": 2,
+            "score_sum": 0.45
+          },
+          "reddit": {
+            "volume": 1,
+            "score_sum": 0.0
+          }
+        }
+      },
+      "tone": "bullish",
+      "recent": {
+        "volume": 1,
+        "by_source": {
+          "yahoo": 1
+        },
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 0,
+        "score_sum": 0.4,
+        "net_score": 0.4,
+        "sources": {
+          "yahoo": {
+            "volume": 1,
+            "score_sum": 0.4
+          }
+        }
+      },
+      "earlier": {
+        "volume": 2,
+        "by_source": {
+          "reddit": 1,
+          "yahoo": 1
+        },
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2,
+        "score_sum": 0.05,
+        "net_score": 0.025,
+        "sources": {
+          "yahoo": {
+            "volume": 1,
+            "score_sum": 0.05
+          },
+          "reddit": {
+            "volume": 1,
+            "score_sum": 0.0
+          }
+        }
+      },
+      "successful_sources": [
+        "yahoo"
+      ],
+      "comparison": {
+        "baseline": "earlier lookback",
+        "sources": [
+          "yahoo"
+        ],
+        "recent_count": 1,
+        "baseline_count": 1,
+        "recent_score": 0.4,
+        "baseline_score": 0.05,
+        "delta": null,
+        "direction_flip": false,
+        "volume_ratio": null,
+        "adequate": false,
+        "note": "Insufficient comparable baseline (need >=3 mentions in each window); no shift/volume inference"
+      },
+      "price": {
+        "percent_change": null,
+        "usable_for_divergence": false,
+        "note": "Synthetic demo has no Yahoo bars. Price context is absent, not zero.",
+        "ticker": "JPM"
+      },
+      "alerts": []
+    },
+    "NVDA": {
+      "ticker": "NVDA",
+      "overall": {
+        "volume": 2,
+        "by_source": {
+          "x": 1,
+          "yahoo": 1
+        },
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2,
+        "score_sum": 0.1,
+        "net_score": 0.05,
+        "sources": {
+          "x": {
+            "volume": 1,
+            "score_sum": 0.1
+          },
+          "yahoo": {
+            "volume": 1,
+            "score_sum": 0.0
+          }
+        }
+      },
+      "tone": "neutral",
+      "recent": {
+        "volume": 1,
+        "by_source": {
+          "x": 1
+        },
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 1,
+        "score_sum": 0.1,
+        "net_score": 0.1,
+        "sources": {
+          "x": {
+            "volume": 1,
+            "score_sum": 0.1
+          }
+        }
+      },
+      "earlier": {
+        "volume": 1,
+        "by_source": {
+          "yahoo": 1
+        },
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 1,
+        "score_sum": 0.0,
+        "net_score": 0.0,
+        "sources": {
+          "yahoo": {
+            "volume": 1,
+            "score_sum": 0.0
+          }
+        }
+      },
+      "successful_sources": [
+        "yahoo"
+      ],
+      "comparison": {
+        "baseline": "earlier lookback",
+        "sources": [],
+        "recent_count": 0,
+        "baseline_count": 0,
+        "recent_score": null,
+        "baseline_score": null,
+        "delta": null,
+        "direction_flip": false,
+        "volume_ratio": null,
+        "adequate": false,
+        "note": "Insufficient comparable baseline (need >=3 mentions in each window); no shift/volume inference"
+      },
+      "price": {
+        "percent_change": null,
+        "usable_for_divergence": false,
+        "note": "Synthetic demo has no Yahoo bars. Price context is absent, not zero.",
+        "ticker": "NVDA"
+      },
+      "alerts": []
+    }
+  },
+  "data_origin": "synthetic_demo"
+}

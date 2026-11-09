@@ -1,0 +1,158 @@
+[
+  {
+    "ticker": "AAPL",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T15:00:00+00:00",
+    "url": "https://example.com/demo/aapl-earlier-1",
+    "text": "Synthetic headline: Apple faces a lawsuit over a fictional contract.",
+    "label": "bearish",
+    "score": -0.6,
+    "signals": [],
+    "flags": [
+      "synthetic_demo"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T18:00:00+00:00",
+    "url": "https://example.com/demo/aapl-earlier-2",
+    "text": "Synthetic headline: Apple cuts guidance in this made-up demo.",
+    "label": "bearish",
+    "score": -0.55,
+    "signals": [],
+    "flags": [
+      "synthetic_demo"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "source": "reddit",
+    "timestamp": "2026-11-09T02:30:00+00:00",
+    "url": "https://example.com/demo/aapl-earlier-3",
+    "text": "Synthetic post: Apple downgrade chatter in the demo corpus.",
+    "label": "bearish",
+    "score": -0.5,
+    "signals": [],
+    "flags": [
+      "synthetic_demo"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "source": "yahoo",
+    "timestamp": "2026-11-09T13:10:00+00:00",
+    "url": "https://example.com/demo/aapl-recent-1",
+    "text": "Synthetic headline: Apple raises guidance in the demo's recent window.",
+    "label": "bullish",
+    "score": 0.72,
+    "signals": [],
+    "flags": [
+      "synthetic_demo"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "source": "x",
+    "timestamp": "2026-11-09T14:00:00+00:00",
+    "url": "https://example.com/demo/aapl-recent-2",
+    "text": "Synthetic post: bullish comment about Apple. Not a real account.",
+    "label": "bullish",
+    "score": 0.64,
+    "signals": [],
+    "flags": [
+      "synthetic_demo"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "source": "yahoo",
+    "timestamp": "2026-11-09T16:30:00+00:00",
+    "url": "https://example.com/demo/aapl-recent-3",
+    "text": "Synthetic headline: Apple earnings beat in the demo corpus.",
+    "label": "bullish",
+    "score": 0.7,
+    "signals": [],
+    "flags": [
+      "synthetic_demo"
+    ]
+  },
+  {
+    "ticker": "JPM",
+    "source": "yahoo",
+    "timestamp": "2026-11-07T15:00:00+00:00",
+    "url": "https://example.com/demo/jpm-1",
+    "text": "Synthetic headline: JPMorgan mention with no strong lexicon hit.",
+    "label": "neutral",
+    "score": 0.05,
+    "signals": [],
+    "flags": [
+      "synthetic_demo"
+    ]
+  },
+  {
+    "ticker": "JPM",
+    "source": "reddit",
+    "timestamp": "2026-11-08T16:00:00+00:00",
+    "url": "https://example.com/demo/jpm-2",
+    "text": "Synthetic post: mixed comment about JPMorgan in the demo.",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "synthetic_demo"
+    ]
+  },
+  {
+    "ticker": "JPM",
+    "source": "yahoo",
+    "timestamp": "2026-11-09T15:00:00+00:00",
+    "url": "https://example.com/demo/jpm-3",
+    "text": "Synthetic headline: JPMorgan raises guidance in the demo only.",
+    "label": "bullish",
+    "score": 0.4,
+    "signals": [],
+    "flags": [
+      "synthetic_demo"
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "source": "x",
+    "timestamp": "2026-11-09T12:30:00+00:00",
+    "url": "https://example.com/demo/nvda-1",
+    "text": "Synthetic post: Nvidia headline in the demo corpus.",
+    "label": "neutral",
+    "score": 0.1,
+    "signals": [],
+    "flags": [
+      "synthetic_demo"
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T02:30:00+00:00",
+    "url": "https://example.com/demo/nvda-boundary",
+    "text": "Synthetic headline used to show the Cordoba date boundary.",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "synthetic_demo"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T15:00:00+00:00",
+    "url": "https://example.com/demo/aapl-earlier-1",
+    "text": "Synthetic headline: Apple faces a lawsuit over a fictional contract.",
+    "label": "bearish",
+    "score": -0.6,
+    "signals": [],
+    "flags": [
+      "synthetic_demo"
+    ]
+  }
+]

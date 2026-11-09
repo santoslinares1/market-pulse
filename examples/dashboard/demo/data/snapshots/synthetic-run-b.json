@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "classifier_version": "lexicon-1",
+  "generated_at": "2026-11-09T12:00:00+00:00",
+  "run_id": "synthetic-run-b.json",
+  "hours": 24,
+  "recent_hours": 6,
+  "data_origin": "synthetic_demo",
+  "tickers": {
+    "AAPL": {
+      "overall": {
+        "volume": 4,
+        "net_score": 0.1
+      }
+    }
+  }
+}
