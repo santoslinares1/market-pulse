@@ -1,0 +1,302 @@
+[
+  {
+    "ticker": "SPY",
+    "source": "yahoo",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Excluded 16 headlines without an explicit ticker/company reference",
+      "RSS is a bounded headline sample, not exhaustive news coverage"
+    ],
+    "sampled": true,
+    "fetched": 19,
+    "accepted": 1
+  },
+  {
+    "ticker": "SPY",
+    "source": "reddit",
+    "status": "error",
+    "errors": [
+      "HTTPError: 403 Client Error: Blocked for url: https://www.reddit.com/r/wallstreetbets+stocks+investing+SecurityAnalysis/search.json?q=SPY&restrict_sr=on&sort=new&t=week&limit=100&raw_json=1"
+    ],
+    "warnings": [],
+    "sampled": true,
+    "fetched": 0,
+    "accepted": 0
+  },
+  {
+    "ticker": "SPY",
+    "source": "x",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Bounded X sample, not population counts; posts are unverified claims, not financial facts",
+      "Imported posts: coverage depends on export selection and age"
+    ],
+    "sampled": true,
+    "fetched": 19,
+    "accepted": 3
+  },
+  {
+    "ticker": "SPY",
+    "source": "yahoo_price",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "No fresh, window-aligned chart data; market may be closed. No price-divergence alert."
+    ],
+    "sampled": false,
+    "fetched": 1,
+    "accepted": 0
+  },
+  {
+    "ticker": "AAPL",
+    "source": "yahoo",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Excluded 12 headlines without an explicit ticker/company reference",
+      "RSS is a bounded headline sample, not exhaustive news coverage"
+    ],
+    "sampled": true,
+    "fetched": 17,
+    "accepted": 3
+  },
+  {
+    "ticker": "AAPL",
+    "source": "reddit",
+    "status": "error",
+    "errors": [
+      "ReadTimeout: HTTPSConnectionPool(host='www.reddit.com', port=443): Read timed out. (read timeout=5)"
+    ],
+    "warnings": [],
+    "sampled": true,
+    "fetched": 0,
+    "accepted": 0
+  },
+  {
+    "ticker": "AAPL",
+    "source": "x",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Bounded X sample, not population counts; posts are unverified claims, not financial facts",
+      "Imported posts: coverage depends on export selection and age"
+    ],
+    "sampled": true,
+    "fetched": 19,
+    "accepted": 4
+  },
+  {
+    "ticker": "AAPL",
+    "source": "yahoo_price",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "No fresh, window-aligned chart data; market may be closed. No price-divergence alert."
+    ],
+    "sampled": false,
+    "fetched": 1,
+    "accepted": 0
+  },
+  {
+    "ticker": "MSFT",
+    "source": "yahoo",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Excluded 18 headlines without an explicit ticker/company reference",
+      "RSS is a bounded headline sample, not exhaustive news coverage"
+    ],
+    "sampled": true,
+    "fetched": 20,
+    "accepted": 2
+  },
+  {
+    "ticker": "MSFT",
+    "source": "reddit",
+    "status": "error",
+    "errors": [
+      "HTTPError: 403 Client Error: Blocked for url: https://www.reddit.com/r/wallstreetbets+stocks+investing+SecurityAnalysis/search.json?q=MSFT&restrict_sr=on&sort=new&t=week&limit=100&raw_json=1"
+    ],
+    "warnings": [],
+    "sampled": true,
+    "fetched": 0,
+    "accepted": 0
+  },
+  {
+    "ticker": "MSFT",
+    "source": "x",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Bounded X sample, not population counts; posts are unverified claims, not financial facts",
+      "Imported posts: coverage depends on export selection and age"
+    ],
+    "sampled": true,
+    "fetched": 19,
+    "accepted": 4
+  },
+  {
+    "ticker": "MSFT",
+    "source": "yahoo_price",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "No fresh, window-aligned chart data; market may be closed. No price-divergence alert."
+    ],
+    "sampled": false,
+    "fetched": 1,
+    "accepted": 0
+  },
+  {
+    "ticker": "NVDA",
+    "source": "yahoo",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Excluded 7 headlines without an explicit ticker/company reference",
+      "RSS is a bounded headline sample, not exhaustive news coverage"
+    ],
+    "sampled": true,
+    "fetched": 15,
+    "accepted": 8
+  },
+  {
+    "ticker": "NVDA",
+    "source": "reddit",
+    "status": "error",
+    "errors": [
+      "HTTPError: 403 Client Error: Blocked for url: https://www.reddit.com/r/wallstreetbets+stocks+investing+SecurityAnalysis/search.json?q=NVDA&restrict_sr=on&sort=new&t=week&limit=100&raw_json=1"
+    ],
+    "warnings": [],
+    "sampled": true,
+    "fetched": 0,
+    "accepted": 0
+  },
+  {
+    "ticker": "NVDA",
+    "source": "x",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Bounded X sample, not population counts; posts are unverified claims, not financial facts",
+      "Imported posts: coverage depends on export selection and age"
+    ],
+    "sampled": true,
+    "fetched": 19,
+    "accepted": 4
+  },
+  {
+    "ticker": "NVDA",
+    "source": "yahoo_price",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "No fresh, window-aligned chart data; market may be closed. No price-divergence alert."
+    ],
+    "sampled": false,
+    "fetched": 1,
+    "accepted": 0
+  },
+  {
+    "ticker": "JPM",
+    "source": "yahoo",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Excluded 9 headlines without an explicit ticker/company reference",
+      "RSS is a bounded headline sample, not exhaustive news coverage"
+    ],
+    "sampled": true,
+    "fetched": 19,
+    "accepted": 3
+  },
+  {
+    "ticker": "JPM",
+    "source": "reddit",
+    "status": "error",
+    "errors": [
+      "HTTPError: 403 Client Error: Blocked for url: https://www.reddit.com/r/wallstreetbets+stocks+investing+SecurityAnalysis/search.json?q=JPM&restrict_sr=on&sort=new&t=week&limit=100&raw_json=1"
+    ],
+    "warnings": [],
+    "sampled": true,
+    "fetched": 0,
+    "accepted": 0
+  },
+  {
+    "ticker": "JPM",
+    "source": "x",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Bounded X sample, not population counts; posts are unverified claims, not financial facts",
+      "Imported posts: coverage depends on export selection and age"
+    ],
+    "sampled": true,
+    "fetched": 19,
+    "accepted": 3
+  },
+  {
+    "ticker": "JPM",
+    "source": "yahoo_price",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "No fresh, window-aligned chart data; market may be closed. No price-divergence alert."
+    ],
+    "sampled": false,
+    "fetched": 1,
+    "accepted": 0
+  },
+  {
+    "ticker": "XOM",
+    "source": "yahoo",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Excluded 7 headlines without an explicit ticker/company reference",
+      "RSS is a bounded headline sample, not exhaustive news coverage"
+    ],
+    "sampled": true,
+    "fetched": 17,
+    "accepted": 0
+  },
+  {
+    "ticker": "XOM",
+    "source": "reddit",
+    "status": "error",
+    "errors": [
+      "HTTPError: 403 Client Error: Blocked for url: https://www.reddit.com/r/wallstreetbets+stocks+investing+SecurityAnalysis/search.json?q=XOM&restrict_sr=on&sort=new&t=week&limit=100&raw_json=1"
+    ],
+    "warnings": [],
+    "sampled": true,
+    "fetched": 0,
+    "accepted": 0
+  },
+  {
+    "ticker": "XOM",
+    "source": "x",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Bounded X sample, not population counts; posts are unverified claims, not financial facts",
+      "Imported posts: coverage depends on export selection and age"
+    ],
+    "sampled": true,
+    "fetched": 19,
+    "accepted": 4
+  },
+  {
+    "ticker": "XOM",
+    "source": "yahoo_price",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "No fresh, window-aligned chart data; market may be closed. No price-divergence alert."
+    ],
+    "sampled": false,
+    "fetched": 1,
+    "accepted": 0
+  }
+]

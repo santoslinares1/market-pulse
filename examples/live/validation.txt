@@ -1,0 +1,52 @@
+Validation executed: 2026-11-08 22:50 Argentina (America/Cordoba, UTC-3)
+
+$ pytest -q
+........................................................................ [ 82%]
+...............                                                          [100%]
+87 passed in 0.19s
+
+$ marketpulse --help
+usage: marketpulse [-h] [--hours HOURS] [--recent-hours RECENT_HOURS]
+                   [--tickers TICKERS] [--watchlist WATCHLIST] [-o OUTPUT]
+                   [--x-file X_FILE] [--data-dir DATA_DIR]
+
+MarketPulse: conversation shifts, not price predictions.
+
+options:
+  -h, --help            show this help message and exit
+  --hours HOURS         Lookback hours (default 24; maximum 168)
+  --recent-hours RECENT_HOURS
+                        Recent comparison window (default 6)
+  --tickers TICKERS     Comma-separated tickers; replaces default watchlist
+                        for this run
+  --watchlist WATCHLIST
+                        YAML path; otherwise project root / env override
+  -o, --output OUTPUT   Artifact directory
+  --x-file X_FILE       Imported X posts JSON; takes precedence over X API
+  --data-dir DATA_DIR   Persistent snapshot directory
+
+$ python -m marketpulse --help
+usage: __main__.py [-h] [--hours HOURS] [--recent-hours RECENT_HOURS]
+                   [--tickers TICKERS] [--watchlist WATCHLIST] [-o OUTPUT]
+                   [--x-file X_FILE] [--data-dir DATA_DIR]
+
+MarketPulse: conversation shifts, not price predictions.
+
+options:
+  -h, --help            show this help message and exit
+  --hours HOURS         Lookback hours (default 24; maximum 168)
+  --recent-hours RECENT_HOURS
+                        Recent comparison window (default 6)
+  --tickers TICKERS     Comma-separated tickers; replaces default watchlist
+                        for this run
+  --watchlist WATCHLIST
+                        YAML path; otherwise project root / env override
+  -o, --output OUTPUT   Artifact directory
+  --x-file X_FILE       Imported X posts JSON; takes precedence over X API
+  --data-dir DATA_DIR   Persistent snapshot directory
+
+$ pip check
+No broken requirements found.
+
+$ python scripts/verify_capture.py
+Saved capture verified: 39 ticker-item mentions; classifications, aggregates and memo match. No network used.
