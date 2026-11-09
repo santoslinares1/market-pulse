@@ -16,6 +16,7 @@ dependencies = ["requests>=2.31", "PyYAML>=6.0.1"]
 [project.optional-dependencies]
 dev = ["pytest>=8"]
 bigquery = ["google-cloud-bigquery>=3.25.0"]
+dashboard = ["streamlit>=1.39"]
 
 [project.scripts]
 marketpulse = "marketpulse.cli:main"

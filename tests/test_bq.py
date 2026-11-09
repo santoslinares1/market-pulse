@@ -249,9 +249,12 @@ def test_optional_dependency_message():
 
 def _mock_collect(make_item):
     def collect(ticker, *args):
+        # cli.main stamps the run with the wall clock, so the mention must sit inside that lookback.
+        item = make_item(ticker=ticker, text=f"${ticker} raises guidance", hours=1)
+        item.timestamp = (datetime.now(timezone.utc) - timedelta(hours=1)).isoformat()
         return (
             [
-                SourceResult(ticker, "yahoo", items=[make_item(ticker=ticker, text=f"${ticker} raises guidance")], fetched=1),
+                SourceResult(ticker, "yahoo", items=[item], fetched=1),
                 SourceResult(ticker, "reddit", status="error", errors=["HTTPError: 403"]),
                 SourceResult(ticker, "x", status="skipped", warnings=["No token"]),
                 SourceResult(ticker, "yahoo_price", warnings=["Market closed"]),
