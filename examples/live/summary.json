@@ -1,0 +1,855 @@
+{
+  "schema_version": 1,
+  "classifier_version": "lexicon-1",
+  "generated_at": "2026-11-09T01:48:42.935834+00:00",
+  "hours": 24.0,
+  "recent_hours": 6.0,
+  "warnings": [],
+  "source_status": [
+    {
+      "ticker": "SPY",
+      "source": "yahoo",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Excluded 16 headlines without an explicit ticker/company reference",
+        "RSS is a bounded headline sample, not exhaustive news coverage"
+      ],
+      "sampled": true,
+      "fetched": 19,
+      "accepted": 1
+    },
+    {
+      "ticker": "SPY",
+      "source": "reddit",
+      "status": "error",
+      "errors": [
+        "HTTPError: 403 Client Error: Blocked for url: https://www.reddit.com/r/wallstreetbets+stocks+investing+SecurityAnalysis/search.json?q=SPY&restrict_sr=on&sort=new&t=week&limit=100&raw_json=1"
+      ],
+      "warnings": [],
+      "sampled": true,
+      "fetched": 0,
+      "accepted": 0
+    },
+    {
+      "ticker": "SPY",
+      "source": "x",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Bounded X sample, not population counts; posts are unverified claims, not financial facts",
+        "Imported posts: coverage depends on export selection and age"
+      ],
+      "sampled": true,
+      "fetched": 19,
+      "accepted": 3
+    },
+    {
+      "ticker": "SPY",
+      "source": "yahoo_price",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "No fresh, window-aligned chart data; market may be closed. No price-divergence alert."
+      ],
+      "sampled": false,
+      "fetched": 1,
+      "accepted": 0
+    },
+    {
+      "ticker": "AAPL",
+      "source": "yahoo",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Excluded 12 headlines without an explicit ticker/company reference",
+        "RSS is a bounded headline sample, not exhaustive news coverage"
+      ],
+      "sampled": true,
+      "fetched": 17,
+      "accepted": 3
+    },
+    {
+      "ticker": "AAPL",
+      "source": "reddit",
+      "status": "error",
+      "errors": [
+        "ReadTimeout: HTTPSConnectionPool(host='www.reddit.com', port=443): Read timed out. (read timeout=5)"
+      ],
+      "warnings": [],
+      "sampled": true,
+      "fetched": 0,
+      "accepted": 0
+    },
+    {
+      "ticker": "AAPL",
+      "source": "x",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Bounded X sample, not population counts; posts are unverified claims, not financial facts",
+        "Imported posts: coverage depends on export selection and age"
+      ],
+      "sampled": true,
+      "fetched": 19,
+      "accepted": 4
+    },
+    {
+      "ticker": "AAPL",
+      "source": "yahoo_price",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "No fresh, window-aligned chart data; market may be closed. No price-divergence alert."
+      ],
+      "sampled": false,
+      "fetched": 1,
+      "accepted": 0
+    },
+    {
+      "ticker": "MSFT",
+      "source": "yahoo",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Excluded 18 headlines without an explicit ticker/company reference",
+        "RSS is a bounded headline sample, not exhaustive news coverage"
+      ],
+      "sampled": true,
+      "fetched": 20,
+      "accepted": 2
+    },
+    {
+      "ticker": "MSFT",
+      "source": "reddit",
+      "status": "error",
+      "errors": [
+        "HTTPError: 403 Client Error: Blocked for url: https://www.reddit.com/r/wallstreetbets+stocks+investing+SecurityAnalysis/search.json?q=MSFT&restrict_sr=on&sort=new&t=week&limit=100&raw_json=1"
+      ],
+      "warnings": [],
+      "sampled": true,
+      "fetched": 0,
+      "accepted": 0
+    },
+    {
+      "ticker": "MSFT",
+      "source": "x",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Bounded X sample, not population counts; posts are unverified claims, not financial facts",
+        "Imported posts: coverage depends on export selection and age"
+      ],
+      "sampled": true,
+      "fetched": 19,
+      "accepted": 4
+    },
+    {
+      "ticker": "MSFT",
+      "source": "yahoo_price",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "No fresh, window-aligned chart data; market may be closed. No price-divergence alert."
+      ],
+      "sampled": false,
+      "fetched": 1,
+      "accepted": 0
+    },
+    {
+      "ticker": "NVDA",
+      "source": "yahoo",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Excluded 7 headlines without an explicit ticker/company reference",
+        "RSS is a bounded headline sample, not exhaustive news coverage"
+      ],
+      "sampled": true,
+      "fetched": 15,
+      "accepted": 8
+    },
+    {
+      "ticker": "NVDA",
+      "source": "reddit",
+      "status": "error",
+      "errors": [
+        "HTTPError: 403 Client Error: Blocked for url: https://www.reddit.com/r/wallstreetbets+stocks+investing+SecurityAnalysis/search.json?q=NVDA&restrict_sr=on&sort=new&t=week&limit=100&raw_json=1"
+      ],
+      "warnings": [],
+      "sampled": true,
+      "fetched": 0,
+      "accepted": 0
+    },
+    {
+      "ticker": "NVDA",
+      "source": "x",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Bounded X sample, not population counts; posts are unverified claims, not financial facts",
+        "Imported posts: coverage depends on export selection and age"
+      ],
+      "sampled": true,
+      "fetched": 19,
+      "accepted": 4
+    },
+    {
+      "ticker": "NVDA",
+      "source": "yahoo_price",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "No fresh, window-aligned chart data; market may be closed. No price-divergence alert."
+      ],
+      "sampled": false,
+      "fetched": 1,
+      "accepted": 0
+    },
+    {
+      "ticker": "JPM",
+      "source": "yahoo",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Excluded 9 headlines without an explicit ticker/company reference",
+        "RSS is a bounded headline sample, not exhaustive news coverage"
+      ],
+      "sampled": true,
+      "fetched": 19,
+      "accepted": 3
+    },
+    {
+      "ticker": "JPM",
+      "source": "reddit",
+      "status": "error",
+      "errors": [
+        "HTTPError: 403 Client Error: Blocked for url: https://www.reddit.com/r/wallstreetbets+stocks+investing+SecurityAnalysis/search.json?q=JPM&restrict_sr=on&sort=new&t=week&limit=100&raw_json=1"
+      ],
+      "warnings": [],
+      "sampled": true,
+      "fetched": 0,
+      "accepted": 0
+    },
+    {
+      "ticker": "JPM",
+      "source": "x",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Bounded X sample, not population counts; posts are unverified claims, not financial facts",
+        "Imported posts: coverage depends on export selection and age"
+      ],
+      "sampled": true,
+      "fetched": 19,
+      "accepted": 3
+    },
+    {
+      "ticker": "JPM",
+      "source": "yahoo_price",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "No fresh, window-aligned chart data; market may be closed. No price-divergence alert."
+      ],
+      "sampled": false,
+      "fetched": 1,
+      "accepted": 0
+    },
+    {
+      "ticker": "XOM",
+      "source": "yahoo",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Excluded 7 headlines without an explicit ticker/company reference",
+        "RSS is a bounded headline sample, not exhaustive news coverage"
+      ],
+      "sampled": true,
+      "fetched": 17,
+      "accepted": 0
+    },
+    {
+      "ticker": "XOM",
+      "source": "reddit",
+      "status": "error",
+      "errors": [
+        "HTTPError: 403 Client Error: Blocked for url: https://www.reddit.com/r/wallstreetbets+stocks+investing+SecurityAnalysis/search.json?q=XOM&restrict_sr=on&sort=new&t=week&limit=100&raw_json=1"
+      ],
+      "warnings": [],
+      "sampled": true,
+      "fetched": 0,
+      "accepted": 0
+    },
+    {
+      "ticker": "XOM",
+      "source": "x",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Bounded X sample, not population counts; posts are unverified claims, not financial facts",
+        "Imported posts: coverage depends on export selection and age"
+      ],
+      "sampled": true,
+      "fetched": 19,
+      "accepted": 4
+    },
+    {
+      "ticker": "XOM",
+      "source": "yahoo_price",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "No fresh, window-aligned chart data; market may be closed. No price-divergence alert."
+      ],
+      "sampled": false,
+      "fetched": 1,
+      "accepted": 0
+    }
+  ],
+  "tickers": {
+    "SPY": {
+      "ticker": "SPY",
+      "overall": {
+        "volume": 4,
+        "by_source": {
+          "x": 3,
+          "yahoo": 1
+        },
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 4,
+        "score_sum": 0.0,
+        "net_score": 0.0,
+        "sources": {
+          "x": {
+            "volume": 3,
+            "score_sum": 0.0
+          },
+          "yahoo": {
+            "volume": 1,
+            "score_sum": 0.0
+          }
+        }
+      },
+      "tone": "neutral",
+      "recent": {
+        "volume": 4,
+        "by_source": {
+          "x": 3,
+          "yahoo": 1
+        },
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 4,
+        "score_sum": 0.0,
+        "net_score": 0.0,
+        "sources": {
+          "x": {
+            "volume": 3,
+            "score_sum": 0.0
+          },
+          "yahoo": {
+            "volume": 1,
+            "score_sum": 0.0
+          }
+        }
+      },
+      "earlier": {
+        "volume": 0,
+        "by_source": {},
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 0,
+        "score_sum": 0,
+        "net_score": null,
+        "sources": {}
+      },
+      "successful_sources": [
+        "x",
+        "yahoo"
+      ],
+      "comparison": {
+        "baseline": "earlier lookback",
+        "sources": [],
+        "recent_count": 0,
+        "baseline_count": 0,
+        "recent_score": null,
+        "baseline_score": null,
+        "delta": null,
+        "direction_flip": false,
+        "volume_ratio": null,
+        "adequate": false,
+        "note": "Insufficient comparable baseline (need >=3 mentions in each window); no shift/volume inference"
+      },
+      "price": {
+        "ticker": "SPY",
+        "source": "yahoo_chart",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY",
+        "quote_time": "2026-11-06T21:00:00+00:00",
+        "reference_basis": "chartPreviousClose (chart-range reference; not necessarily last session close)",
+        "regular_market_price": 735.29,
+        "reference_pct": -2.7034,
+        "percent_change": null,
+        "window_start": "2026-11-06T21:00:00+00:00",
+        "window_end": "2026-11-06T21:00:00+00:00",
+        "usable_for_divergence": false,
+        "note": "No fresh, window-aligned chart data"
+      },
+      "alerts": []
+    },
+    "AAPL": {
+      "ticker": "AAPL",
+      "overall": {
+        "volume": 7,
+        "by_source": {
+          "x": 4,
+          "yahoo": 3
+        },
+        "bullish": 2,
+        "bearish": 2,
+        "neutral": 3,
+        "score_sum": -0.6877,
+        "net_score": -0.0982,
+        "sources": {
+          "x": {
+            "volume": 4,
+            "score_sum": -0.8441
+          },
+          "yahoo": {
+            "volume": 3,
+            "score_sum": 0.1564
+          }
+        }
+      },
+      "tone": "neutral",
+      "recent": {
+        "volume": 5,
+        "by_source": {
+          "x": 4,
+          "yahoo": 1
+        },
+        "bullish": 2,
+        "bearish": 2,
+        "neutral": 1,
+        "score_sum": -0.5226,
+        "net_score": -0.1045,
+        "sources": {
+          "x": {
+            "volume": 4,
+            "score_sum": -0.8441
+          },
+          "yahoo": {
+            "volume": 1,
+            "score_sum": 0.3215
+          }
+        }
+      },
+      "earlier": {
+        "volume": 2,
+        "by_source": {
+          "yahoo": 2
+        },
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2,
+        "score_sum": -0.1651,
+        "net_score": -0.0825,
+        "sources": {
+          "yahoo": {
+            "volume": 2,
+            "score_sum": -0.1651
+          }
+        }
+      },
+      "successful_sources": [
+        "x",
+        "yahoo"
+      ],
+      "comparison": {
+        "baseline": "earlier lookback",
+        "sources": [
+          "yahoo"
+        ],
+        "recent_count": 1,
+        "baseline_count": 2,
+        "recent_score": 0.3215,
+        "baseline_score": -0.0825,
+        "delta": null,
+        "direction_flip": false,
+        "volume_ratio": null,
+        "adequate": false,
+        "note": "Insufficient comparable baseline (need >=3 mentions in each window); no shift/volume inference"
+      },
+      "price": {
+        "ticker": "AAPL",
+        "source": "yahoo_chart",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL",
+        "quote_time": "2026-11-06T21:00:01+00:00",
+        "reference_basis": "chartPreviousClose (chart-range reference; not necessarily last session close)",
+        "regular_market_price": 342.37,
+        "reference_pct": -0.6558,
+        "percent_change": null,
+        "window_start": "2026-11-06T21:00:00+00:00",
+        "window_end": "2026-11-06T21:00:00+00:00",
+        "usable_for_divergence": false,
+        "note": "No fresh, window-aligned chart data"
+      },
+      "alerts": []
+    },
+    "MSFT": {
+      "ticker": "MSFT",
+      "overall": {
+        "volume": 6,
+        "by_source": {
+          "x": 4,
+          "yahoo": 2
+        },
+        "bullish": 3,
+        "bearish": 0,
+        "neutral": 3,
+        "score_sum": 0.8879,
+        "net_score": 0.148,
+        "sources": {
+          "x": {
+            "volume": 4,
+            "score_sum": 0.3215
+          },
+          "yahoo": {
+            "volume": 2,
+            "score_sum": 0.5664
+          }
+        }
+      },
+      "tone": "neutral",
+      "recent": {
+        "volume": 4,
+        "by_source": {
+          "x": 4
+        },
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 3,
+        "score_sum": 0.3215,
+        "net_score": 0.0804,
+        "sources": {
+          "x": {
+            "volume": 4,
+            "score_sum": 0.3215
+          }
+        }
+      },
+      "earlier": {
+        "volume": 2,
+        "by_source": {
+          "yahoo": 2
+        },
+        "bullish": 2,
+        "bearish": 0,
+        "neutral": 0,
+        "score_sum": 0.5664,
+        "net_score": 0.2832,
+        "sources": {
+          "yahoo": {
+            "volume": 2,
+            "score_sum": 0.5664
+          }
+        }
+      },
+      "successful_sources": [
+        "x",
+        "yahoo"
+      ],
+      "comparison": {
+        "baseline": "earlier lookback",
+        "sources": [],
+        "recent_count": 0,
+        "baseline_count": 0,
+        "recent_score": null,
+        "baseline_score": null,
+        "delta": null,
+        "direction_flip": false,
+        "volume_ratio": null,
+        "adequate": false,
+        "note": "Insufficient comparable baseline (need >=3 mentions in each window); no shift/volume inference"
+      },
+      "price": {
+        "ticker": "MSFT",
+        "source": "yahoo_chart",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT",
+        "quote_time": "2026-11-06T21:00:01+00:00",
+        "reference_basis": "chartPreviousClose (chart-range reference; not necessarily last session close)",
+        "regular_market_price": 530.61,
+        "reference_pct": 1.667,
+        "percent_change": null,
+        "window_start": "2026-11-06T21:00:00+00:00",
+        "window_end": "2026-11-06T21:00:00+00:00",
+        "usable_for_divergence": false,
+        "note": "No fresh, window-aligned chart data"
+      },
+      "alerts": []
+    },
+    "NVDA": {
+      "ticker": "NVDA",
+      "overall": {
+        "volume": 12,
+        "by_source": {
+          "x": 4,
+          "yahoo": 8
+        },
+        "bullish": 3,
+        "bearish": 5,
+        "neutral": 4,
+        "score_sum": -0.5024,
+        "net_score": -0.0419,
+        "sources": {
+          "x": {
+            "volume": 4,
+            "score_sum": 0.1406
+          },
+          "yahoo": {
+            "volume": 8,
+            "score_sum": -0.643
+          }
+        }
+      },
+      "tone": "neutral",
+      "recent": {
+        "volume": 12,
+        "by_source": {
+          "x": 4,
+          "yahoo": 8
+        },
+        "bullish": 3,
+        "bearish": 5,
+        "neutral": 4,
+        "score_sum": -0.5024,
+        "net_score": -0.0419,
+        "sources": {
+          "x": {
+            "volume": 4,
+            "score_sum": 0.1406
+          },
+          "yahoo": {
+            "volume": 8,
+            "score_sum": -0.643
+          }
+        }
+      },
+      "earlier": {
+        "volume": 0,
+        "by_source": {},
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 0,
+        "score_sum": 0,
+        "net_score": null,
+        "sources": {}
+      },
+      "successful_sources": [
+        "x",
+        "yahoo"
+      ],
+      "comparison": {
+        "baseline": "earlier lookback",
+        "sources": [],
+        "recent_count": 0,
+        "baseline_count": 0,
+        "recent_score": null,
+        "baseline_score": null,
+        "delta": null,
+        "direction_flip": false,
+        "volume_ratio": null,
+        "adequate": false,
+        "note": "Insufficient comparable baseline (need >=3 mentions in each window); no shift/volume inference"
+      },
+      "price": {
+        "ticker": "NVDA",
+        "source": "yahoo_chart",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA",
+        "quote_time": "2026-11-06T21:00:00+00:00",
+        "reference_basis": "chartPreviousClose (chart-range reference; not necessarily last session close)",
+        "regular_market_price": 186.64,
+        "reference_pct": -8.7959,
+        "percent_change": null,
+        "window_start": "2026-11-06T21:00:00+00:00",
+        "window_end": "2026-11-06T21:00:00+00:00",
+        "usable_for_divergence": false,
+        "note": "No fresh, window-aligned chart data"
+      },
+      "alerts": []
+    },
+    "JPM": {
+      "ticker": "JPM",
+      "overall": {
+        "volume": 6,
+        "by_source": {
+          "x": 3,
+          "yahoo": 3
+        },
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 6,
+        "score_sum": 0.0,
+        "net_score": 0.0,
+        "sources": {
+          "x": {
+            "volume": 3,
+            "score_sum": 0.0
+          },
+          "yahoo": {
+            "volume": 3,
+            "score_sum": 0.0
+          }
+        }
+      },
+      "tone": "neutral",
+      "recent": {
+        "volume": 3,
+        "by_source": {
+          "x": 3
+        },
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 3,
+        "score_sum": 0.0,
+        "net_score": 0.0,
+        "sources": {
+          "x": {
+            "volume": 3,
+            "score_sum": 0.0
+          }
+        }
+      },
+      "earlier": {
+        "volume": 3,
+        "by_source": {
+          "yahoo": 3
+        },
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 3,
+        "score_sum": 0.0,
+        "net_score": 0.0,
+        "sources": {
+          "yahoo": {
+            "volume": 3,
+            "score_sum": 0.0
+          }
+        }
+      },
+      "successful_sources": [
+        "x",
+        "yahoo"
+      ],
+      "comparison": {
+        "baseline": "earlier lookback",
+        "sources": [],
+        "recent_count": 0,
+        "baseline_count": 0,
+        "recent_score": null,
+        "baseline_score": null,
+        "delta": null,
+        "direction_flip": false,
+        "volume_ratio": null,
+        "adequate": false,
+        "note": "Insufficient comparable baseline (need >=3 mentions in each window); no shift/volume inference"
+      },
+      "price": {
+        "ticker": "JPM",
+        "source": "yahoo_chart",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/JPM",
+        "quote_time": "2026-11-06T21:00:02+00:00",
+        "reference_basis": "chartPreviousClose (chart-range reference; not necessarily last session close)",
+        "regular_market_price": 334.49,
+        "reference_pct": -0.7566,
+        "percent_change": null,
+        "window_start": "2026-11-06T21:00:00+00:00",
+        "window_end": "2026-11-06T21:00:00+00:00",
+        "usable_for_divergence": false,
+        "note": "No fresh, window-aligned chart data"
+      },
+      "alerts": []
+    },
+    "XOM": {
+      "ticker": "XOM",
+      "overall": {
+        "volume": 4,
+        "by_source": {
+          "x": 4
+        },
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 4,
+        "score_sum": 0.0,
+        "net_score": 0.0,
+        "sources": {
+          "x": {
+            "volume": 4,
+            "score_sum": 0.0
+          }
+        }
+      },
+      "tone": "neutral",
+      "recent": {
+        "volume": 4,
+        "by_source": {
+          "x": 4
+        },
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 4,
+        "score_sum": 0.0,
+        "net_score": 0.0,
+        "sources": {
+          "x": {
+            "volume": 4,
+            "score_sum": 0.0
+          }
+        }
+      },
+      "earlier": {
+        "volume": 0,
+        "by_source": {},
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 0,
+        "score_sum": 0,
+        "net_score": null,
+        "sources": {}
+      },
+      "successful_sources": [
+        "x",
+        "yahoo"
+      ],
+      "comparison": {
+        "baseline": "earlier lookback",
+        "sources": [],
+        "recent_count": 0,
+        "baseline_count": 0,
+        "recent_score": null,
+        "baseline_score": null,
+        "delta": null,
+        "direction_flip": false,
+        "volume_ratio": null,
+        "adequate": false,
+        "note": "Insufficient comparable baseline (need >=3 mentions in each window); no shift/volume inference"
+      },
+      "price": {
+        "ticker": "XOM",
+        "source": "yahoo_chart",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/XOM",
+        "quote_time": "2026-11-06T21:01:29+00:00",
+        "reference_basis": "chartPreviousClose (chart-range reference; not necessarily last session close)",
+        "regular_market_price": 165.87,
+        "reference_pct": -11.4179,
+        "percent_change": null,
+        "window_start": "2026-11-06T21:00:00+00:00",
+        "window_end": "2026-11-06T21:00:00+00:00",
+        "usable_for_divergence": false,
+        "note": "No fresh, window-aligned chart data"
+      },
+      "alerts": []
+    }
+  }
+}

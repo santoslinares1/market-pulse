@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "marketpulse"
+version = "0.1.0"
+description = "A transparent watchlist sentiment radar for conversation shifts, not price forecasts."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Santos Linares", email = "santos9linares@gmail.com"}]
+keywords = ["finance", "sentiment", "equity-research", "data", "watchlist"]
+dependencies = ["requests>=2.31", "PyYAML>=6.0.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+bigquery = ["google-cloud-bigquery>=3.25.0"]
+
+[project.scripts]
+marketpulse = "marketpulse.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+marketpulse = ["default_watchlist.yml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

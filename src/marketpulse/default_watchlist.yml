@@ -1,0 +1,9 @@
+# Market benchmark followed by individual equities. Ordering is preserved.
+market:
+  - SPY
+tickers:
+  - AAPL
+  - MSFT
+  - NVDA
+  - JPM
+  - XOM

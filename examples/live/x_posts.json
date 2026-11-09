@@ -1,0 +1,132 @@
+{
+  "provenance": {
+    "connector": "Grok Bot x MCP search_posts_all",
+    "retrieved_date": "2026-11-08 Argentina (America/Cordoba, UTC-3)",
+    "query_window_utc": [
+      "2026-11-08T01:44:00Z",
+      "2026-11-09T01:43:00Z"
+    ],
+    "selection": "19 exact posts selected from seven bounded search responses (10 results each), favoring explicit finance references and avoiding personal-rumor amplification. Promotional examples retained for noise handling. Not random or exhaustive; not a volume baseline.",
+    "queries": [
+      "($TICKER OR \"TICKER stock\") lang:en -is:retweet for SPY/AAPL/MSFT/NVDA/JPM/XOM",
+      "\"SPY\" (ETF OR stock OR bullish OR bearish) -\"Chinese spy\" lang:en -is:retweet"
+    ],
+    "connector_warning": "Connector removed $ from initial queries; local relevance filtering applied; many unrelated SPY results excluded."
+  },
+  "data": [
+    {
+      "id": "2119604040304930904",
+      "created_at": "2026-11-09T01:32:38.000Z",
+      "text": "@AJButton2 BRK is good but to the end, it is one stock after all. You can not make all your bets into one stock under one Management. That will be crazy. SO I prefer SPY or VOO.",
+      "url": "https://x.com/Yuan111135/status/2119604040304930904"
+    },
+    {
+      "id": "2119603464863121485",
+      "created_at": "2026-11-09T01:30:21.000Z",
+      "text": "See the same symbol in weekly candles. In our 360MiQ Advanced Chart, change Daily to Weekly, then choose a wider Range. Uses end-of-day data. SPY ETF shown only as an example, not a recommendation.\n\nhttps://t.co/q9545lHNfD https://t.co/RxPXdn6JKX",
+      "url": "https://x.com/360MiQ/status/2119603464863121485"
+    },
+    {
+      "id": "2119599442235940940",
+      "created_at": "2026-11-09T01:14:21.000Z",
+      "text": "Weekly Trade Ideas · Nov 9–13\n\n$SPY $XOM $AMD $HOOD\nGrades and flows from the Nov 2–6 week.\n\nhttps://t.co/O8QsJRL2fl (in BETA)\nhttps://t.co/WlVHWymW9Z (in BETA)\n\nNot financial advice. https://t.co/VlXaA30E6S",
+      "url": "https://x.com/MRFInvests/status/2119599442235940940"
+    },
+    {
+      "id": "2119602470158471335",
+      "created_at": "2026-11-09T01:26:23.000Z",
+      "text": "$AAPL is an easy short from here. \n\nTheir website is unusable/does not work and their entire online ordering process is garbage.  See you in the low 200s",
+      "url": "https://x.com/GreedyLittlPig/status/2119602470158471335"
+    },
+    {
+      "id": "2119606459532984510",
+      "created_at": "2026-11-09T01:42:14.000Z",
+      "text": "@lemmy_cooke If you look at AAPL i made a call out 3 days ago.... (straight to zero here too 🤫✋️💎) 👀🤣💀",
+      "url": "https://x.com/allen_walk98446/status/2119606459532984510"
+    },
+    {
+      "id": "2119606451203153981",
+      "created_at": "2026-11-09T01:42:13.000Z",
+      "text": "$AAPL  the only stock that didn’t get hit hmm",
+      "url": "https://x.com/bostong41476161/status/2119606451203153981"
+    },
+    {
+      "id": "2119603087153475671",
+      "created_at": "2026-11-09T01:28:50.000Z",
+      "text": "✅ Buy zone now (4 stocks)\n$AAPL – Buy at $315–$330\n$MSFT – Buy at $500–$520\n$GOOGL – Buy at $270–$284\n$MU – Buy at $660–$690\n⏳ Buy the dips / Add near support (4 stocks)\n$TSLA – Wait for key support levels\n$NVDA – Long-term favorite, scale in on weakness\n$PLTR – Enter near https://t.co/6NxmnZB3Et",
+      "url": "https://x.com/ClassicRoy/status/2119603087153475671"
+    },
+    {
+      "id": "2119606385201844713",
+      "created_at": "2026-11-09T01:41:57.000Z",
+      "text": "@davepl1968 yet there are portable, fast, alternative available \n\nI fail to understand MSFT lack of actual strategy with UI, between. net, windows, and other teams.\n\nat least some does it portable but  :)",
+      "url": "https://x.com/PierreJoye/status/2119606385201844713"
+    },
+    {
+      "id": "2119605690780225614",
+      "created_at": "2026-11-09T01:39:11.000Z",
+      "text": "Please focus on these opportunities next week The best investment opportunities are not based on guesswork, but are built on logic and analysis.\n\n• 🚀 $MSFT — $528 → $580\n• 🚀 $AMZN — $252 → $270\n• 🚀 $GOOG — $284 → $330\n• 🚀 $META — $608 → $650\n• 🚀 $ORCL — $113 → $140",
+      "url": "https://x.com/_RyanBullock/status/2119605690780225614"
+    },
+    {
+      "id": "2119604574646620395",
+      "created_at": "2026-11-09T01:34:45.000Z",
+      "text": "@WallStreetMatt If you hold the following stocks\n\n$MSFT  $AMZN  $META\n\n🔗： https://t.co/vPtvtSxscn\n\nYou really should follow him; I’ve made a lot of money following his lead.\n\nHis analysis is highly precise and well-substantiated, offering significant reference value. https://t.co/d1J0hFzdxZ",
+      "url": "https://x.com/thefarmerslt/status/2119604574646620395"
+    },
+    {
+      "id": "2119606544212054485",
+      "created_at": "2026-11-09T01:42:35.000Z",
+      "text": "Tomorrow is going to be giga green\n\n$NVDA $MU $CRDO",
+      "url": "https://x.com/BrokeLeopold/status/2119606544212054485"
+    },
+    {
+      "id": "2119606553414148199",
+      "created_at": "2026-11-09T01:42:37.000Z",
+      "text": "@optionscjp 180 is the line everyone's watching. If $NVDA holds it, dealers keep absorbing the panic and premium bleeds. Lose it and bids thin out fast toward the next shelf.",
+      "url": "https://x.com/azrael_options/status/2119606553414148199"
+    },
+    {
+      "id": "2119606533130523087",
+      "created_at": "2026-11-09T01:42:32.000Z",
+      "text": "@DudeWhoInvests Can’t have a great company without a great leader… unsure where this is going, and markets hate uncertainty. NVDA hit the 90’s just last year - don’t think it’s invulnerable.",
+      "url": "https://x.com/kirkj101/status/2119606533130523087"
+    },
+    {
+      "id": "2119602299953951142",
+      "created_at": "2026-11-09T01:25:43.000Z",
+      "text": "A global WhatsApp community for stock enthusiasts to share, learn &amp; grow!\n\n✅ Market updates\n✅ Daily stock ideas\n✅ Real-time trading insights\n\n👉 Join here: https://t.co/1G5nEcUl9F\n\n🚀 After joining, send \"Stocks\"!\n\n$TSLA $JPM $CRWD $STEP #AI #Stocks https://t.co/wUcZuSMZWk",
+      "url": "https://x.com/Boy_Wonder_87/status/2119602299953951142"
+    },
+    {
+      "id": "2119601163670794635",
+      "created_at": "2026-11-09T01:21:12.000Z",
+      "text": "A dedicated WhatsApp group for $JPM holders is now online!\n\nAll investors holding $JPM stock are welcome to join this exclusive group to discuss the stock and get the latest information\n\ngroup:🔗https://t.co/dDFTKRoVw6\nHe is an excellent stock analyst—be sure to follow him.\n $MU https://t.co/Po1wzYtJan",
+      "url": "https://x.com/okey9/status/2119601163670794635"
+    },
+    {
+      "id": "2119600730978075098",
+      "created_at": "2026-11-09T01:19:29.000Z",
+      "text": "@WallStreetMatt The following stocks may rise:\n\n$UPWK  $IQ  $JPM\n\nIf you're not making $3,000 every two weeks, you should definitely follow this blogger,\nFollow him 👉  https://t.co/8rRsDjuJqc\n\nHis analysis and predictions are incredibly accurate; I've made a lot of money following his advice. https://t.co/JFJVpJZYlM",
+      "url": "https://x.com/GuNeme_/status/2119600730978075098"
+    },
+    {
+      "id": "2119605613734801914",
+      "created_at": "2026-11-09T01:38:53.000Z",
+      "text": "@abhayapul1 @kuttrapali26 ONGC is the closest pure-play upstream parallel to XOM. Higher crude realisations directly lift its margins, same as Oil India. RIL gives more balanced exposure through refining and other businesses. Check production and realisation trends yourself.",
+      "url": "https://x.com/grok/status/2119605613734801914"
+    },
+    {
+      "id": "2119597161348206660",
+      "created_at": "2026-11-09T01:05:18.000Z",
+      "text": "We're not chasing $XOM down here. Here's why.\n\nSpot 166.2 · flip 172.73 · call wall 180\n\nBelow 172.73, hedging feeds moves instead of fighting them. That's why we'd rather wait than chase. https://t.co/IXppnWafQf",
+      "url": "https://x.com/algoxfloww/status/2119597161348206660"
+    },
+    {
+      "id": "2119597465154543957",
+      "created_at": "2026-11-09T01:06:30.000Z",
+      "text": "Trade Tester scan — closed trades (by symbol), top P/L — Trend, Daily, 50 symbols, as of 2026-11-06.\nIBD-style RS: screened 167 → 50 · as of 2026-11-06\nShare quantity calculation\n$100k × 1% risk / TradeRisk per share\n$MRVL $TXN $JNJ $ROST $COP $MRK $XOM $LLY $AMGN $CVX $WMT $MAR https://t.co/F2veesZ17W",
+      "url": "https://x.com/Accurate_Trader/status/2119597465154543957"
+    }
+  ]
+}

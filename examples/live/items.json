@@ -1,0 +1,592 @@
+[
+  {
+    "ticker": "NVDA",
+    "source": "x",
+    "timestamp": "2026-11-09T01:42:37+00:00",
+    "url": "https://x.com/azrael_options/status/2119606553414148199",
+    "text": "@optionscjp 180 is the line everyone's watching. If $NVDA holds it, dealers keep absorbing the panic and premium bleeds. Lose it and bids thin out fast toward the next shelf.",
+    "label": "bearish",
+    "score": -0.3215,
+    "signals": [
+      {
+        "signal": "panic",
+        "weight": -1,
+        "negated": false
+      }
+    ],
+    "flags": [
+      "unverified_social_post"
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "source": "x",
+    "timestamp": "2026-11-09T01:42:35+00:00",
+    "url": "https://x.com/BrokeLeopold/status/2119606544212054485",
+    "text": "Tomorrow is going to be giga green\n\n$NVDA $MU $CRDO",
+    "label": "bullish",
+    "score": 0.4621,
+    "signals": [
+      {
+        "signal": "giga green",
+        "weight": 1.5,
+        "negated": false
+      }
+    ],
+    "flags": [
+      "unverified_social_post",
+      "multi_ticker_ambiguous"
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "source": "x",
+    "timestamp": "2026-11-09T01:42:32+00:00",
+    "url": "https://x.com/kirkj101/status/2119606533130523087",
+    "text": "@DudeWhoInvests Can’t have a great company without a great leader… unsure where this is going, and markets hate uncertainty. NVDA hit the 90’s just last year - don’t think it’s invulnerable.",
+    "label": "bearish",
+    "score": -0.2449,
+    "signals": [
+      {
+        "signal": "uncertainty",
+        "weight": -0.75,
+        "negated": false
+      }
+    ],
+    "flags": [
+      "unverified_social_post"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "source": "x",
+    "timestamp": "2026-11-09T01:42:14+00:00",
+    "url": "https://x.com/allen_walk98446/status/2119606459532984510",
+    "text": "@lemmy_cooke If you look at AAPL i made a call out 3 days ago.... (straight to zero here too 🤫✋️💎) 👀🤣💀",
+    "label": "bearish",
+    "score": -0.5828,
+    "signals": [
+      {
+        "signal": "straight to zero",
+        "weight": -2,
+        "negated": false
+      }
+    ],
+    "flags": [
+      "unverified_social_post"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "source": "x",
+    "timestamp": "2026-11-09T01:42:13+00:00",
+    "url": "https://x.com/bostong41476161/status/2119606451203153981",
+    "text": "$AAPL  the only stock that didn’t get hit hmm",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post"
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "source": "x",
+    "timestamp": "2026-11-09T01:41:57+00:00",
+    "url": "https://x.com/PierreJoye/status/2119606385201844713",
+    "text": "@davepl1968 yet there are portable, fast, alternative available \n\nI fail to understand MSFT lack of actual strategy with UI, between. net, windows, and other teams.\n\nat least some does it portable but  :)",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post"
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "source": "yahoo",
+    "timestamp": "2026-11-09T01:39:41+00:00",
+    "url": "https://finance.yahoo.com/m/283e1bd9-349e-390b-a32b-b4ed9a9034f3/dow-jones-futures-rise%2C-techs.html?.tsrc=rss",
+    "text": "Dow Jones Futures Rise, Techs Fall As Nvidia Probes CEO Jensen Huang Spying Case",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": []
+  },
+  {
+    "ticker": "MSFT",
+    "source": "x",
+    "timestamp": "2026-11-09T01:39:11+00:00",
+    "url": "https://x.com/_RyanBullock/status/2119605690780225614",
+    "text": "Please focus on these opportunities next week The best investment opportunities are not based on guesswork, but are built on logic and analysis.\n\n• 🚀 $MSFT — $528 → $580\n• 🚀 $AMZN — $252 → $270\n• 🚀 $GOOG — $284 → $330\n• 🚀 $META — $608 → $650\n• 🚀 $ORCL — $113 → $140",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post",
+      "ticker_line_context"
+    ]
+  },
+  {
+    "ticker": "XOM",
+    "source": "x",
+    "timestamp": "2026-11-09T01:38:53+00:00",
+    "url": "https://x.com/grok/status/2119605613734801914",
+    "text": "@abhayapul1 @kuttrapali26 ONGC is the closest pure-play upstream parallel to XOM. Higher crude realisations directly lift its margins, same as Oil India. RIL gives more balanced exposure through refining and other businesses. Check production and realisation trends yourself.",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post"
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "source": "x",
+    "timestamp": "2026-11-09T01:34:45+00:00",
+    "url": "https://x.com/thefarmerslt/status/2119604574646620395",
+    "text": "@WallStreetMatt If you hold the following stocks\n\n$MSFT  $AMZN  $META\n\n🔗： https://t.co/vPtvtSxscn\n\nYou really should follow him; I’ve made a lot of money following his lead.\n\nHis analysis is highly precise and well-substantiated, offering significant reference value. https://t.co/d1J0hFzdxZ",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post",
+      "multi_ticker_ambiguous",
+      "promotional_noise_suppressed"
+    ]
+  },
+  {
+    "ticker": "SPY",
+    "source": "x",
+    "timestamp": "2026-11-09T01:32:38+00:00",
+    "url": "https://x.com/Yuan111135/status/2119604040304930904",
+    "text": "@AJButton2 BRK is good but to the end, it is one stock after all. You can not make all your bets into one stock under one Management. That will be crazy. SO I prefer SPY or VOO.",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post"
+    ]
+  },
+  {
+    "ticker": "SPY",
+    "source": "x",
+    "timestamp": "2026-11-09T01:30:21+00:00",
+    "url": "https://x.com/360MiQ/status/2119603464863121485",
+    "text": "See the same symbol in weekly candles. In our 360MiQ Advanced Chart, change Daily to Weekly, then choose a wider Range. Uses end-of-day data. SPY ETF shown only as an example, not a recommendation.\n\nhttps://t.co/q9545lHNfD https://t.co/RxPXdn6JKX",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "source": "x",
+    "timestamp": "2026-11-09T01:28:50+00:00",
+    "url": "https://x.com/ClassicRoy/status/2119603087153475671",
+    "text": "✅ Buy zone now (4 stocks)\n$AAPL – Buy at $315–$330\n$MSFT – Buy at $500–$520\n$GOOGL – Buy at $270–$284\n$MU – Buy at $660–$690\n⏳ Buy the dips / Add near support (4 stocks)\n$TSLA – Wait for key support levels\n$NVDA – Long-term favorite, scale in on weakness\n$PLTR – Enter near https://t.co/6NxmnZB3Et",
+    "label": "bullish",
+    "score": 0.3215,
+    "signals": [
+      {
+        "signal": "buy",
+        "weight": 1,
+        "negated": false
+      }
+    ],
+    "flags": [
+      "unverified_social_post",
+      "ticker_line_context"
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "source": "x",
+    "timestamp": "2026-11-09T01:28:50+00:00",
+    "url": "https://x.com/ClassicRoy/status/2119603087153475671",
+    "text": "✅ Buy zone now (4 stocks)\n$AAPL – Buy at $315–$330\n$MSFT – Buy at $500–$520\n$GOOGL – Buy at $270–$284\n$MU – Buy at $660–$690\n⏳ Buy the dips / Add near support (4 stocks)\n$TSLA – Wait for key support levels\n$NVDA – Long-term favorite, scale in on weakness\n$PLTR – Enter near https://t.co/6NxmnZB3Et",
+    "label": "bullish",
+    "score": 0.3215,
+    "signals": [
+      {
+        "signal": "buy",
+        "weight": 1,
+        "negated": false
+      }
+    ],
+    "flags": [
+      "unverified_social_post",
+      "ticker_line_context"
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "source": "x",
+    "timestamp": "2026-11-09T01:28:50+00:00",
+    "url": "https://x.com/ClassicRoy/status/2119603087153475671",
+    "text": "✅ Buy zone now (4 stocks)\n$AAPL – Buy at $315–$330\n$MSFT – Buy at $500–$520\n$GOOGL – Buy at $270–$284\n$MU – Buy at $660–$690\n⏳ Buy the dips / Add near support (4 stocks)\n$TSLA – Wait for key support levels\n$NVDA – Long-term favorite, scale in on weakness\n$PLTR – Enter near https://t.co/6NxmnZB3Et",
+    "label": "bullish",
+    "score": 0.2449,
+    "signals": [
+      {
+        "signal": "long",
+        "weight": 0.75,
+        "negated": false
+      }
+    ],
+    "flags": [
+      "unverified_social_post",
+      "ticker_line_context"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "source": "x",
+    "timestamp": "2026-11-09T01:26:23+00:00",
+    "url": "https://x.com/GreedyLittlPig/status/2119602470158471335",
+    "text": "$AAPL is an easy short from here. \n\nTheir website is unusable/does not work and their entire online ordering process is garbage.  See you in the low 200s",
+    "label": "bearish",
+    "score": -0.5828,
+    "signals": [
+      {
+        "signal": "easy short",
+        "weight": -2,
+        "negated": false
+      }
+    ],
+    "flags": [
+      "unverified_social_post"
+    ]
+  },
+  {
+    "ticker": "JPM",
+    "source": "x",
+    "timestamp": "2026-11-09T01:25:43+00:00",
+    "url": "https://x.com/Boy_Wonder_87/status/2119602299953951142",
+    "text": "A global WhatsApp community for stock enthusiasts to share, learn & grow!\n\n✅ Market updates\n✅ Daily stock ideas\n✅ Real-time trading insights\n\n👉 Join here: https://t.co/1G5nEcUl9F\n\n🚀 After joining, send \"Stocks\"!\n\n$TSLA $JPM $CRWD $STEP #AI #Stocks https://t.co/wUcZuSMZWk",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post",
+      "multi_ticker_ambiguous",
+      "promotional_noise_suppressed"
+    ]
+  },
+  {
+    "ticker": "JPM",
+    "source": "x",
+    "timestamp": "2026-11-09T01:21:12+00:00",
+    "url": "https://x.com/okey9/status/2119601163670794635",
+    "text": "A dedicated WhatsApp group for $JPM holders is now online!\n\nAll investors holding $JPM stock are welcome to join this exclusive group to discuss the stock and get the latest information\n\ngroup:🔗https://t.co/dDFTKRoVw6\nHe is an excellent stock analyst—be sure to follow him.\n $MU https://t.co/Po1wzYtJan",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post",
+      "ticker_line_context",
+      "promotional_noise_suppressed"
+    ]
+  },
+  {
+    "ticker": "JPM",
+    "source": "x",
+    "timestamp": "2026-11-09T01:19:29+00:00",
+    "url": "https://x.com/GuNeme_/status/2119600730978075098",
+    "text": "@WallStreetMatt The following stocks may rise:\n\n$UPWK  $IQ  $JPM\n\nIf you're not making $3,000 every two weeks, you should definitely follow this blogger,\nFollow him 👉  https://t.co/8rRsDjuJqc\n\nHis analysis and predictions are incredibly accurate; I've made a lot of money following his advice. https://t.co/JFJVpJZYlM",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post",
+      "multi_ticker_ambiguous",
+      "promotional_noise_suppressed"
+    ]
+  },
+  {
+    "ticker": "SPY",
+    "source": "yahoo",
+    "timestamp": "2026-11-09T01:16:16+00:00",
+    "url": "https://stocktwits.com/news-articles/markets/equity/biotech-beats-spy-qqq-hims-earnings-summit-fda-test-center-stage/cNGAtt7R9Iw?.tsrc=rss",
+    "text": "Biotech Beats SPY And QQQ In Market Rout — Now Hims Earnings And Summit’s FDA Test Take Center Stage ‘",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": []
+  },
+  {
+    "ticker": "NVDA",
+    "source": "yahoo",
+    "timestamp": "2026-11-09T01:14:24+00:00",
+    "url": "https://finance.yahoo.com/m/7d4c4e40-eb01-324f-b03d-99c6800c4248/nvidia-board-launches-probe.html?.tsrc=rss",
+    "text": "Nvidia Board Launches Probe In CEO Jensen Huang Spying Case",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": []
+  },
+  {
+    "ticker": "SPY",
+    "source": "x",
+    "timestamp": "2026-11-09T01:14:21+00:00",
+    "url": "https://x.com/MRFInvests/status/2119599442235940940",
+    "text": "Weekly Trade Ideas · Nov 9–13\n\n$SPY $XOM $AMD $HOOD\nGrades and flows from the Nov 2–6 week.\n\nhttps://t.co/O8QsJRL2fl (in BETA)\nhttps://t.co/WlVHWymW9Z (in BETA)\n\nNot financial advice. https://t.co/VlXaA30E6S",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post",
+      "multi_ticker_ambiguous"
+    ]
+  },
+  {
+    "ticker": "XOM",
+    "source": "x",
+    "timestamp": "2026-11-09T01:14:21+00:00",
+    "url": "https://x.com/MRFInvests/status/2119599442235940940",
+    "text": "Weekly Trade Ideas · Nov 9–13\n\n$SPY $XOM $AMD $HOOD\nGrades and flows from the Nov 2–6 week.\n\nhttps://t.co/O8QsJRL2fl (in BETA)\nhttps://t.co/WlVHWymW9Z (in BETA)\n\nNot financial advice. https://t.co/VlXaA30E6S",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post",
+      "multi_ticker_ambiguous"
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "source": "yahoo",
+    "timestamp": "2026-11-09T01:12:36+00:00",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/3-us-defense-stocks-worth-011236831.html?.tsrc=rss",
+    "text": "3 US Defense Stocks Worth Watching As Nvidia Questions Hit National Security",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": []
+  },
+  {
+    "ticker": "NVDA",
+    "source": "yahoo",
+    "timestamp": "2026-11-09T01:07:00+00:00",
+    "url": "https://247wallst.com/investing/2026/11/08/nvidias-board-just-opened-an-investigation-into-jensen-huang-heres-what-history-says-comes-next-for-the-stock/?.tsrc=rss",
+    "text": "Nvidia’s Board Just Opened an Investigation Into Jensen Huang. Here’s What History Says Comes Next for the Stock",
+    "label": "bearish",
+    "score": -0.3215,
+    "signals": [
+      {
+        "signal": "investigation",
+        "weight": -1,
+        "negated": false
+      }
+    ],
+    "flags": []
+  },
+  {
+    "ticker": "XOM",
+    "source": "x",
+    "timestamp": "2026-11-09T01:06:30+00:00",
+    "url": "https://x.com/Accurate_Trader/status/2119597465154543957",
+    "text": "Trade Tester scan — closed trades (by symbol), top P/L — Trend, Daily, 50 symbols, as of 2026-11-06.\nIBD-style RS: screened 167 → 50 · as of 2026-11-06\nShare quantity calculation\n$100k × 1% risk / TradeRisk per share\n$MRVL $TXN $JNJ $ROST $COP $MRK $XOM $LLY $AMGN $CVX $WMT $MAR https://t.co/F2veesZ17W",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post",
+      "multi_ticker_ambiguous"
+    ]
+  },
+  {
+    "ticker": "XOM",
+    "source": "x",
+    "timestamp": "2026-11-09T01:05:18+00:00",
+    "url": "https://x.com/algoxfloww/status/2119597161348206660",
+    "text": "We're not chasing $XOM down here. Here's why.\n\nSpot 166.2 · flip 172.73 · call wall 180\n\nBelow 172.73, hedging feeds moves instead of fighting them. That's why we'd rather wait than chase. https://t.co/IXppnWafQf",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": [
+      "unverified_social_post"
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "source": "yahoo",
+    "timestamp": "2026-11-09T00:20:26+00:00",
+    "url": "https://www.cnn.com/2026/11/08/business/nvidia-investigation-ceo-jensen-huang?.tsrc=rss",
+    "text": "Nvidia launches investigation into CEO Jensen Huang over foreign intelligence concerns",
+    "label": "bearish",
+    "score": -0.3215,
+    "signals": [
+      {
+        "signal": "investigation",
+        "weight": -1,
+        "negated": false
+      }
+    ],
+    "flags": []
+  },
+  {
+    "ticker": "NVDA",
+    "source": "yahoo",
+    "timestamp": "2026-11-09T00:07:37+00:00",
+    "url": "https://finance.yahoo.com/technology/articles/nvidia-ceo-jensen-huangs-image-000737077.html?.tsrc=rss",
+    "text": "Nvidia CEO Jensen Huang's image tarnished by board investigation and affair, analysts say",
+    "label": "bearish",
+    "score": -0.3215,
+    "signals": [
+      {
+        "signal": "investigation",
+        "weight": -1,
+        "negated": false
+      }
+    ],
+    "flags": []
+  },
+  {
+    "ticker": "NVDA",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T23:30:00+00:00",
+    "url": "https://finance.yahoo.com/m/09a7b85b-f39c-346a-88bc-f818668a56a9/nvidia-stock-faces-new.html?.tsrc=rss",
+    "text": "Nvidia Stock Faces New Pressure as Board Investigates Huang’s Links to Alleged Spy",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": []
+  },
+  {
+    "ticker": "NVDA",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T23:05:00+00:00",
+    "url": "https://www.fool.com/investing/2026/11/08/amd-or-nvidia-which-ai-chip-stock-would-i-buy-with/?.tsrc=rss",
+    "text": "AMD or Nvidia: Which AI Chip Stock Would I Buy With $1,000 Today?",
+    "label": "bullish",
+    "score": 0.3215,
+    "signals": [
+      {
+        "signal": "buy",
+        "weight": 1,
+        "negated": false
+      }
+    ],
+    "flags": []
+  },
+  {
+    "ticker": "AAPL",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T21:55:41+00:00",
+    "url": "https://www.tikr.com/blog/apple-wont-play-in-traffic-on-ai-its-up-28-in-a-year-too-late-to-buy?ref=yahoofinance&tlnk=yf-261108-522mf3wh&.tsrc=rss",
+    "text": "Apple Won’t “Play in Traffic” on AI. It’s Up 28% in a Year: Too Late to Buy?",
+    "label": "bullish",
+    "score": 0.3215,
+    "signals": [
+      {
+        "signal": "buy",
+        "weight": 1,
+        "negated": false
+      }
+    ],
+    "flags": []
+  },
+  {
+    "ticker": "MSFT",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T17:58:02+00:00",
+    "url": "https://www.fool.com/investing/2026/11/08/microsoft-is-reportedly-getting-pickier-about-ai-data-center-deals-is-the-stock-a-buy-now/?.tsrc=rss",
+    "text": "Microsoft Is Reportedly Getting Pickier About AI Data Center Deals. Is the Stock a Buy Now?",
+    "label": "bullish",
+    "score": 0.3215,
+    "signals": [
+      {
+        "signal": "buy",
+        "weight": 1,
+        "negated": false
+      }
+    ],
+    "flags": []
+  },
+  {
+    "ticker": "MSFT",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T17:36:28+00:00",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-makes-10-best-173628657.html?.tsrc=rss",
+    "text": "Microsoft (MSFT) Makes the 10 Best Dow Stocks for 2027 List as Azure Growth Speeds Up",
+    "label": "bullish",
+    "score": 0.2449,
+    "signals": [
+      {
+        "signal": "growth",
+        "weight": 0.75,
+        "negated": false
+      }
+    ],
+    "flags": []
+  },
+  {
+    "ticker": "AAPL",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T17:17:00+00:00",
+    "url": "https://www.thestreet.com/technology/democrats-prepare-to-go-after-apple-meta-and-elon-musk-companies?.tsrc=rss",
+    "text": "Democrats prepare to go after Apple, Meta and Elon Musk companies",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": []
+  },
+  {
+    "ticker": "AAPL",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T13:41:45+00:00",
+    "url": "https://www.barchart.com/story/news/8724367/apples-iphone-demand-surges-but-aapl-still-isnt-a-strong-buy?.tsrc=rss",
+    "text": "Apple’s iPhone Demand Surges, But AAPL Still Isn’t a ‘Strong Buy’",
+    "label": "neutral",
+    "score": -0.1651,
+    "signals": [
+      {
+        "signal": "surges",
+        "weight": 1.5,
+        "negated": false
+      },
+      {
+        "signal": "strong buy",
+        "weight": -2,
+        "negated": true
+      }
+    ],
+    "flags": []
+  },
+  {
+    "ticker": "JPM",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T12:07:58+00:00",
+    "url": "https://247wallst.com/investing/2026/11/08/jpmorgan-vs-bank-of-america-which-dividend-stock-is-better-for-retirement/?.tsrc=rss",
+    "text": "JPMorgan vs. Bank of America: Which Dividend Stock Is Better for Retirement?",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": []
+  },
+  {
+    "ticker": "JPM",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T11:00:00+00:00",
+    "url": "https://finance.yahoo.com/small-business/articles/jp-morgan-athlete-center-excellence-110000713.html?.tsrc=rss",
+    "text": "JP Morgan Athlete Center of Excellence: athletes need a financial playbook now more than ever",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": []
+  },
+  {
+    "ticker": "JPM",
+    "source": "yahoo",
+    "timestamp": "2026-11-08T02:13:23+00:00",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/could-senate-epstein-probe-mean-021323031.html?.tsrc=rss",
+    "text": "What Could A Senate Epstein Probe Mean For JPMorgan Chase (JPM)?",
+    "label": "neutral",
+    "score": 0.0,
+    "signals": [],
+    "flags": []
+  }
+]
