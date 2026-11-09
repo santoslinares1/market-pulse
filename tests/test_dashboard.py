@@ -35,18 +35,18 @@ def test_launch_command_is_loopback_only():
     assert "pip install -e '.[dashboard]'" in MISSING_EXTRA
 
 
-def test_demo_corpus_is_labeled_synthetic_and_deduped():
+def test_demo_corpus_is_labeled_synthetic_and_clean():
     workspace = load_workspace(demo_root())
     assert workspace.synthetic
-    assert workspace.duplicate_mentions == 1
-    assert workspace.duplicate_observations == 1
+    assert workspace.duplicate_mentions == 0
+    assert workspace.duplicate_observations == 0
+    assert workspace.issues == []
     assert len(workspace.items) == 11
     assert {row["provenance"] for row in workspace.observations} == {"synthetic_demo"}
     assert all(0 <= row["price"] <= 1 for row in workspace.observations)
     assert len(workspace.runs) == 2
     assert sum(run["reported_volume"] for run in workspace.runs) == 8
     assert len(workspace.items) != 8
-    assert any("broken" in issue.path or "Ignored" in issue.message or "could not read" in issue.message for issue in workspace.issues)
 
 
 def test_cordoba_date_boundary_and_source_filter_does_not_define_polymarket():
@@ -90,6 +90,36 @@ def test_empty_malformed_and_out_of_range_prices(tmp_path):
     assert any("items.json" in issue.path for issue in workspace.issues)
     assert workspace.kind == "local_artifacts"
     assert mean_score(workspace.items) is None
+
+
+def test_duplicate_rows_and_broken_snapshot_are_reported(tmp_path):
+    """Fault fixtures stay out of the packaged demo and still surface when a real folder has them."""
+    root = tmp_path / "saved"
+    (root / "output").mkdir(parents=True)
+    (root / "data" / "polymarket").mkdir(parents=True)
+    (root / "data" / "snapshots").mkdir(parents=True)
+    mention = {
+        "ticker": "JPM", "source": "yahoo", "timestamp": "2026-11-09T15:00:00+00:00",
+        "url": "https://example.com/dup", "text": "Same synthetic row twice.",
+        "label": "neutral", "score": 0.0, "signals": [], "flags": [],
+    }
+    (root / "output" / "items.json").write_text(json.dumps([mention, dict(mention)]), encoding="utf-8")
+    observation = {
+        "observation_id": "same-id", "ticker": "JPM", "market_id": "m", "outcome": "Yes",
+        "price": 0.4, "observed_at": "2026-11-09T15:00:00+00:00", "provenance": "gamma_market",
+    }
+    (root / "data" / "polymarket" / "observations.json").write_text(
+        json.dumps({"schema_version": 1, "observations": [observation, dict(observation)]}),
+        encoding="utf-8",
+    )
+    (root / "data" / "snapshots" / "broken.json").write_text("{", encoding="utf-8")
+    workspace = load_workspace(root)
+    assert workspace.duplicate_mentions == 1
+    assert workspace.duplicate_observations == 1
+    assert len(workspace.items) == 1
+    assert len(workspace.observations) == 1
+    assert any("broken.json" in issue.path and "could not read" in issue.message for issue in workspace.issues)
+    assert workspace.kind == "local_artifacts"
 
 
 def test_missing_folder_is_an_issue_not_a_zero_score(tmp_path):

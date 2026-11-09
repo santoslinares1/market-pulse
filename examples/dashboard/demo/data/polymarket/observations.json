@@ -98,19 +98,6 @@
       "interpretation": "Synthetic mapping. Not a live Polymarket market."
     },
     {
-      "observation_id": "synthetic-jpm-2026-11-09T17:00:00+00:00",
-      "series_id": "synthetic-series-jpm",
-      "ticker": "JPM",
-      "market_id": "synthetic-jpm-rate",
-      "outcome": "Yes",
-      "price": 0.5,
-      "price_basis": "synthetic_demo_price",
-      "observed_at": "2026-11-09T17:00:00+00:00",
-      "observed_at_basis": "synthetic_demo",
-      "provenance": "synthetic_demo",
-      "run_id": "synthetic-demo-20261109T180000Z"
-    },
-    {
       "observation_id": "synthetic-nvda-only",
       "series_id": "synthetic-series-nvda",
       "ticker": "NVDA",

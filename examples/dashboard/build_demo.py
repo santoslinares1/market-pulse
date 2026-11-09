@@ -207,19 +207,6 @@ def observations():
             "interpretation": "Synthetic mapping. Not a live Polymarket market.",
         })
     rows.append({
-        "observation_id": "synthetic-jpm-2026-11-09T17:00:00+00:00",
-        "series_id": "synthetic-series-jpm",
-        "ticker": "JPM",
-        "market_id": "synthetic-jpm-rate",
-        "outcome": "Yes",
-        "price": 0.50,
-        "price_basis": "synthetic_demo_price",
-        "observed_at": "2026-11-09T17:00:00+00:00",
-        "observed_at_basis": "synthetic_demo",
-        "provenance": "synthetic_demo",
-        "run_id": RUN_ID,
-    })
-    rows.append({
         "observation_id": "synthetic-nvda-only",
         "series_id": "synthetic-series-nvda",
         "ticker": "NVDA",
@@ -248,7 +235,6 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     (data / "polymarket").mkdir(parents=True, exist_ok=True)
     (data / "snapshots").mkdir(parents=True, exist_ok=True)
-    # One intentional duplicate of the first Apple headline. The dashboard must count it once.
     records = []
     for entry in ITEMS:
         records.append({
@@ -256,7 +242,6 @@ def main():
             "url": entry.url, "text": entry.text, "label": entry.label, "score": entry.score,
             "signals": [], "flags": list(entry.flags),
         })
-    records.append(dict(records[0]))
     tickers = {}
     status_rows = statuses()
     price = {
@@ -310,7 +295,8 @@ def main():
             "tickers": {"AAPL": {"overall": {"volume": volume, "net_score": 0.1}}},
         }
         (data / "snapshots" / name).write_text(json.dumps(snap, indent=2) + "\n", encoding="utf-8")
-    (data / "snapshots" / "broken.json").write_text("{", encoding="utf-8")
+    leftover = data / "snapshots" / "broken.json"
+    leftover.unlink(missing_ok=True)
     manifest = {
         "kind": "synthetic_demo",
         "not_live": True,
