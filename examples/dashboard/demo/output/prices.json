@@ -1,0 +1,20 @@
+{
+  "AAPL": {
+    "percent_change": null,
+    "usable_for_divergence": false,
+    "note": "Synthetic demo has no Yahoo bars. Price context is absent, not zero.",
+    "ticker": "AAPL"
+  },
+  "JPM": {
+    "percent_change": null,
+    "usable_for_divergence": false,
+    "note": "Synthetic demo has no Yahoo bars. Price context is absent, not zero.",
+    "ticker": "JPM"
+  },
+  "NVDA": {
+    "percent_change": null,
+    "usable_for_divergence": false,
+    "note": "Synthetic demo has no Yahoo bars. Price context is absent, not zero.",
+    "ticker": "NVDA"
+  }
+}

@@ -1,5 +1,5 @@
 """Offline Polymarket adapter: parsing, windows, CLI, and BigQuery DDL."""
-from datetime import timedelta
+from datetime import datetime, timedelta, timezone
 import json
 from pathlib import Path
 
@@ -408,21 +408,24 @@ def test_search_truncates_and_does_not_follow_has_more():
     assert any("did not follow" in warning for warning in found["warnings"])
 
 
-def _yahoo_batch(ticker, *_args):
+def _yahoo_batch(stamp):
     from marketpulse.normalize import Item
-    item = Item(ticker, "yahoo", "2026-11-08T21:00:00+00:00", "https://example.com/jpm", f"${ticker} raises guidance", "bullish", 0.6)
-    return ([
-        SourceResult(ticker, "yahoo", items=[item], fetched=1),
-        SourceResult(ticker, "reddit", status="error", errors=["HTTPError: 403"]),
-        SourceResult(ticker, "x", status="skipped", warnings=["No token"]),
-        SourceResult(ticker, "yahoo_price", warnings=["Market closed"]),
-    ], {"ticker": ticker, "percent_change": None, "usable_for_divergence": False, "note": "Stale"})
+
+    def collect(ticker, *_args):
+        item = Item(ticker, "yahoo", stamp, "https://example.com/jpm", f"${ticker} raises guidance", "bullish", 0.6)
+        return ([
+            SourceResult(ticker, "yahoo", items=[item], fetched=1),
+            SourceResult(ticker, "reddit", status="error", errors=["HTTPError: 403"]),
+            SourceResult(ticker, "x", status="skipped", warnings=["No token"]),
+            SourceResult(ticker, "yahoo_price", warnings=["Market closed"]),
+        ], {"ticker": ticker, "percent_change": None, "usable_for_divergence": False, "note": "Stale"})
+    return collect
 
 
 def test_default_radar_does_not_call_polymarket_or_change_outputs(tmp_path, monkeypatch):
     monkeypatch.delenv("MARKETPULSE_POLYMARKET", raising=False)
     monkeypatch.delenv("MARKETPULSE_POLYMARKET_FIXTURE", raising=False)
-    monkeypatch.setattr(cli, "collect_ticker", _yahoo_batch)
+    monkeypatch.setattr(cli, "collect_ticker", _yahoo_batch((datetime.now(timezone.utc) - timedelta(hours=1)).isoformat()))
 
     def boom(*_args, **_kwargs):
         raise AssertionError("Polymarket network was called")
@@ -440,7 +443,7 @@ def test_default_radar_does_not_call_polymarket_or_change_outputs(tmp_path, monk
 
 
 def test_fixture_cli_is_offline_and_writes_evidence(tmp_path, monkeypatch):
-    monkeypatch.setattr(cli, "collect_ticker", _yahoo_batch)
+    monkeypatch.setattr(cli, "collect_ticker", _yahoo_batch("2026-11-09T16:00:00+00:00"))
     monkeypatch.setattr(requests.Session, "get", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("live get")))
     root = Path(__file__).resolve().parents[1]
     out = tmp_path / "out"
@@ -477,7 +480,7 @@ def test_fixture_cli_is_offline_and_writes_evidence(tmp_path, monkeypatch):
 
 
 def test_polymarket_http_failure_keeps_other_sources(tmp_path, monkeypatch):
-    monkeypatch.setattr(cli, "collect_ticker", _yahoo_batch)
+    monkeypatch.setattr(cli, "collect_ticker", _yahoo_batch((datetime.now(timezone.utc) - timedelta(hours=1)).isoformat()))
     monkeypatch.setattr(
         "marketpulse.sources.polymarket.public_get",
         lambda *_a, **_k: (_ for _ in ()).throw(PolymarketRateLimit("HTTP 429 from gamma. Not retried.")),

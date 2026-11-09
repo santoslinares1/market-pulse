@@ -1,0 +1,116 @@
+[
+  {
+    "ticker": "AAPL",
+    "source": "yahoo",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Synthetic demo status. No Yahoo request was made."
+    ],
+    "sampled": true,
+    "fetched": 2,
+    "accepted": 2
+  },
+  {
+    "ticker": "AAPL",
+    "source": "reddit",
+    "status": "error",
+    "errors": [
+      "HTTPError: 403"
+    ],
+    "warnings": [
+      "Synthetic error row so the dashboard can show a partial source. Not a live request."
+    ],
+    "sampled": true,
+    "fetched": 0,
+    "accepted": 0
+  },
+  {
+    "ticker": "AAPL",
+    "source": "x",
+    "status": "skipped",
+    "errors": [],
+    "warnings": [
+      "Synthetic skip. No X token is used by the demo."
+    ],
+    "sampled": true,
+    "fetched": 0,
+    "accepted": 0
+  },
+  {
+    "ticker": "JPM",
+    "source": "yahoo",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Synthetic demo status. No Yahoo request was made."
+    ],
+    "sampled": true,
+    "fetched": 2,
+    "accepted": 2
+  },
+  {
+    "ticker": "JPM",
+    "source": "reddit",
+    "status": "error",
+    "errors": [
+      "HTTPError: 403"
+    ],
+    "warnings": [
+      "Synthetic error row so the dashboard can show a partial source. Not a live request."
+    ],
+    "sampled": true,
+    "fetched": 0,
+    "accepted": 0
+  },
+  {
+    "ticker": "JPM",
+    "source": "x",
+    "status": "skipped",
+    "errors": [],
+    "warnings": [
+      "Synthetic skip. No X token is used by the demo."
+    ],
+    "sampled": true,
+    "fetched": 0,
+    "accepted": 0
+  },
+  {
+    "ticker": "NVDA",
+    "source": "yahoo",
+    "status": "ok",
+    "errors": [],
+    "warnings": [
+      "Synthetic demo status. No Yahoo request was made."
+    ],
+    "sampled": true,
+    "fetched": 2,
+    "accepted": 2
+  },
+  {
+    "ticker": "NVDA",
+    "source": "reddit",
+    "status": "error",
+    "errors": [
+      "HTTPError: 403"
+    ],
+    "warnings": [
+      "Synthetic error row so the dashboard can show a partial source. Not a live request."
+    ],
+    "sampled": true,
+    "fetched": 0,
+    "accepted": 0
+  },
+  {
+    "ticker": "NVDA",
+    "source": "x",
+    "status": "skipped",
+    "errors": [],
+    "warnings": [
+      "Synthetic skip. No X token is used by the demo."
+    ],
+    "sampled": true,
+    "fetched": 0,
+    "accepted": 0
+  }
+]

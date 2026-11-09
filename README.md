@@ -405,6 +405,52 @@ Application Default Credentials described above, plus
 `bq-init --bq-series polymarket` (or `all`). This repository does not log into
 GCP or create those resources.
 
+## Local Streamlit desk
+
+The desk is an optional extra. Core `pip install -e '.[dev]'` and `pytest` do not
+install or import Streamlit, and the desk never fetches Yahoo, Reddit, X,
+Polymarket, or BigQuery. It only reads known files under the folder you choose:
+`output/items.json`, `summary.json`, `polymarket.json`, `source_status.json`,
+`alerts.json`, `prices.json`, `data/polymarket/observations.json`, and
+`data/snapshots/*.json`.
+
+Displayed clocks use **America/Cordoba (UTC-3)**. Mention filters use publication
+time. Polymarket filters use `observed_at`. The mention-source filter does not
+treat Polymarket as a news source. Snapshot files are listed as separate runs
+and their volumes are not added to the mention count. Sentiment charts are the
+mean of retained item scores. The saved recent/earlier window block stays the
+radar's own aggregate. Outcome prices stay on a 0–1 scale, separate from
+sentiment in [-1, 1]. Fewer than two price points produces an insufficient-history
+message instead of a line. Missing scores stay `n/a`, not zero.
+
+### Offline interview demo
+
+Synthetic files, dated 7–9 Nov 2026 UTC, including synthetic Polymarket rows:
+
+```bash
+python examples/dashboard/build_demo.py
+pip install -e '.[dashboard]'
+python -m marketpulse.dashboard --demo
+```
+
+Open `http://127.0.0.1:8501`. The process binds to loopback only. The page is
+labeled synthetic. It does not call Yahoo or Reddit.
+
+### A radar run you already generated
+
+```bash
+python -m marketpulse --tickers JPM --polymarket polymarket.links.yml -o output --data-dir data
+python -m marketpulse.dashboard
+```
+
+Use the sidebar to point at another folder that uses the same `output/` and
+`data/` layout. Choose **Reload from disk** after a new radar run. That reload
+reads files again; it does not call the sources. Generation itself can use the
+network. The dashboard does not.
+
+If Streamlit is missing, `python -m marketpulse.dashboard` exits 2 and prints
+the install command above.
+
 ## Limitations and next steps
 
 Lexicons miss sarcasm, novel slang, implied targets, conditional language and subject-level

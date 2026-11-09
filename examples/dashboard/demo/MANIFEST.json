@@ -1,0 +1,8 @@
+{
+  "kind": "synthetic_demo",
+  "not_live": true,
+  "title": "Synthetic MarketPulse dashboard demo",
+  "actual_span": "2026-11-07T15:00:00Z through 2026-11-09T18:00:00Z",
+  "display_timezone": "America/Cordoba (UTC-3)",
+  "note": "Hand-built corpus for offline interviews. Mentions, prices, liquidity, and source errors are synthetic. Polymarket rows are not archived provider observations."
+}

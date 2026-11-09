@@ -1,0 +1,107 @@
+{
+  "enabled": true,
+  "offline_fixture": true,
+  "fixture_example": true,
+  "data_origin": "synthetic_demo",
+  "price_meaning": "Synthetic share prices in [0, 1]. They are not Polymarket prints, not calibrated probabilities, and not a forecast.",
+  "divergence_meaning": "Divergence was not evaluated as a trading signal. This demo leaves the mapping unspecified on purpose.",
+  "warnings": [
+    "Every Polymarket row in this folder is synthetic_demo, not an archived capture."
+  ],
+  "links": [
+    {
+      "ticker": "JPM",
+      "market_id": "synthetic-jpm-rate",
+      "slug": "synthetic-example-rate-cut",
+      "question": "Will the example committee cut the example rate in December?",
+      "outcome": "Yes",
+      "relation": "unspecified",
+      "interpretation": "Synthetic mapping. Yes means the fictional committee cuts the example rate. Unspecified tells the dashboard to show the price beside JPM mentions and not to invent a direction.",
+      "price": 0.5,
+      "price_basis": "synthetic_demo_price",
+      "updated_at": "2026-11-09T17:00:00+00:00",
+      "closed": false,
+      "liquidity": 5000,
+      "liquidity_unit": "Synthetic demo units, not pUSD and not a live book.",
+      "volume_24h": 1200,
+      "volume_24h_unit": "Synthetic trailing-24h figure, not exchange volume.",
+      "resolution_status": null,
+      "resolution_source": "Synthetic resolution note, not an oracle.",
+      "rules_text": "This fictional contract would resolve Yes if the example committee announced an example rate cut. It is not a Polymarket rule.",
+      "source_url": "https://example.com/demo/polymarket/jpm",
+      "status": "ok",
+      "errors": [],
+      "warnings": [
+        "Synthetic demo series. Not a Polymarket capture."
+      ],
+      "divergence_flag": null,
+      "suppressed_reasons": [
+        "relation_unspecified"
+      ],
+      "limitations": [],
+      "window": {
+        "current_price": 0.5,
+        "earlier_price": 0.42,
+        "delta": 0.08,
+        "current_observed_at": "2026-11-09T17:00:00+00:00",
+        "earlier_observed_at": "2026-11-07T15:00:00+00:00",
+        "current_provenance": "synthetic_demo",
+        "earlier_provenance": "synthetic_demo",
+        "note": "Both points are synthetic. The change is not a market move."
+      },
+      "history": {
+        "provenance": "synthetic_demo",
+        "sampling": "four hand-written points for the demo",
+        "points_kept": 4,
+        "truncated": false
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "market_id": "synthetic-nvda-thin",
+      "slug": "synthetic-nvda-thin",
+      "question": "Will the example chip event happen before the demo year ends?",
+      "outcome": "Yes",
+      "relation": "unspecified",
+      "interpretation": "Synthetic one-point series so the dashboard can show insufficient history.",
+      "price": 0.33,
+      "price_basis": "synthetic_demo_price",
+      "updated_at": "2026-11-09T16:00:00+00:00",
+      "closed": false,
+      "liquidity": null,
+      "liquidity_unit": "Missing on purpose.",
+      "volume_24h": null,
+      "volume_24h_unit": "Missing on purpose.",
+      "resolution_status": null,
+      "resolution_source": null,
+      "rules_text": "Synthetic thin series. No second observation exists, so no trend is defined.",
+      "source_url": "https://example.com/demo/polymarket/nvda",
+      "status": "partial",
+      "errors": [],
+      "warnings": [
+        "Only one synthetic point. Do not draw a trend."
+      ],
+      "divergence_flag": null,
+      "suppressed_reasons": [
+        "relation_unspecified",
+        "no_aligned_price_baseline",
+        "missing_or_zero_liquidity"
+      ],
+      "limitations": [
+        "liquidity_missing",
+        "no_history"
+      ],
+      "window": {
+        "current_price": 0.33,
+        "earlier_price": null,
+        "delta": null,
+        "note": "No earlier synthetic point. Baseline not fabricated."
+      },
+      "history": {
+        "provenance": "synthetic_demo",
+        "points_kept": 1,
+        "truncated": false
+      }
+    }
+  ]
+}
